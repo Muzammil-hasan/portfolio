@@ -1,0 +1,154 @@
+.about {
+  padding: 2.5rem ($page-padding * 3) 25vh;
+  background-color: color(background);
+
+  &__titleWrapper {
+    @extend .heading-reveal;
+    position: relative;
+    padding: 10rem 0 5rem;
+
+    &-line {
+      line-height: 8rem;
+      position: relative;
+
+      .stroke {
+        position: absolute;
+        height: 0.1rem;
+        width: 10rem;
+        top: 3.8rem;
+        left: 21rem;
+        background-color: color(main);
+        transform: scale(0);
+        transform-origin: left;
+      }
+
+      > span {
+        font-size: 6.9rem;
+      }
+    }
+  }
+
+  &__content {
+    @extend .flex-start;
+    align-items: flex-start;
+    padding: 5rem 0;
+
+    &-greet {
+      @extend .text-reveal;
+      width: 10%;
+
+      span {
+        font-weight: 400 !important;
+      }
+    }
+
+    &__descriptionContainer {
+      @extend .text-reveal;
+
+      &-line {
+        line-height: 1.35;
+      }
+    }
+  }
+
+  .text {
+    @include font-size(h5);
+    font-family: font(text);
+    letter-spacing: normal;
+    font-weight: 300;
+  }
+
+  &__hireContainer {
+    padding: 0;
+    margin: 8rem 0;
+
+    &__lineWrapper {
+      @extend .heading-reveal;
+      position: relative;
+      padding: 0;
+
+      &-line {
+        line-height: 7rem;
+        position: relative;
+
+        .stroke {
+          position: absolute;
+          height: 0.1rem;
+          width: 10rem;
+          top: 3.3rem;
+          left: 30rem;
+          background-color: color(main);
+          transform: scale(0);
+          transform-origin: left;
+        }
+
+        > span {
+          font-size: 5.9rem;
+        }
+      }
+    }
+  }
+
+  &__contactCta {
+    &-email {
+      @extend .flex-start;
+      margin-bottom: 1rem;
+
+      p {
+        margin: 0;
+        padding-right: 1rem;
+      }
+
+      a {
+        @extend .cta-secondary;
+        pointer-events: all;
+      }
+    }
+  }
+
+  @include device(mobileAndTablet) {
+    padding: 5rem ($page-padding * 2);
+
+    &__titleWrapper {
+      &-line {
+        line-height: 6rem;
+
+        > span {
+          font-size: 5rem;
+        }
+
+        .stroke {
+          left: 15rem;
+          top: 3.2rem;
+          width: 6rem;
+        }
+      }
+    }
+
+    &__content {
+      &__descriptionContainer {
+        padding: 1rem 0;
+      }
+    }
+
+    &__hireContainer {
+      margin: 6rem 0;
+
+      &__lineWrapper {
+        &-line {
+          line-height: 4rem;
+
+          > span {
+            font-size: 3.8rem;
+          }
+
+          .stroke {
+            left: 19.5rem;
+            top: 1.8rem;
+            width: 6rem;
+          }
+        }
+      }
+    }
+  }
+}

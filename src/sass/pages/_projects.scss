@@ -1,0 +1,9 @@
+.projects {
+  background-color: color(dark-background);
+  color: color(background-lighter);
+  padding: 5vh $page-padding 17vh;
+
+  @include device(mobileAndTablet) {
+    padding: 25vh $page-padding 5rem;
+  }
+}

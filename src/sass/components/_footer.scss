@@ -1,0 +1,22 @@
+.footer {
+  display: none;
+  @extend .flex-between;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  // pointer-events: none;
+  width: 100%;
+  padding: 0 $page-padding;
+  height: $header-height;
+  background-color: color(background);
+
+  &__cta {
+    overflow-y: hidden;
+
+    a {
+      @extend .cta-default;
+      pointer-events: all;
+    }
+  }
+}

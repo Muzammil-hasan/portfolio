@@ -1,0 +1,96 @@
+@mixin animation-mixin($name, $from, $to) {
+  @keyframes #{$name} {
+    0% {
+      transform: translate3d($from, 0, 0);
+      opacity: 0;
+    }
+    100% {
+      transform: translate3d($to, 0, 0);
+      opacity: 1;
+    }
+  }
+}
+
+@keyframes slide {
+  0% {
+    -webkit-transform-origin: right;
+    transform-origin: right;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  33% {
+    -webkit-transform-origin: right;
+    transform-origin: right;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+  }
+  66% {
+    -webkit-transform-origin: left;
+    transform-origin: left;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+  }
+  to {
+    -webkit-transform-origin: left;
+    transform-origin: left;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    -webkit-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    -o-transform: scaleX(0);
+    transform: scaleX(0);
+  }
+
+  /* Finish changes by here */
+  15% {
+    -webkit-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    -o-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+
+  /* Between 20% and 100%, nothing changes */
+  100% {
+    -webkit-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    -o-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+}
+
+@keyframes bounce-char {
+  20% {
+    transform: translateY(0%);
+  }
+  70% {
+    transform: translateY(-40%);
+  }
+}
+
+@keyframes bounce-end {
+  to {
+    transform: translateY(0%) scale(1);
+  }
+}
+
+@keyframes scale-out {
+  0%,
+  100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+  }
+}

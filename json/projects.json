@@ -1,0 +1,33 @@
+[
+  {
+    "id": "1",
+    "name": "Spring Field",
+    "imageMain": "springField.jpg",
+    "imageDesktop": "springFieldDesktop.jpg",
+    "imageMobile": "springFieldMobile.jpg",
+    "role": "web design & front-end",
+    "description": "This small one page website pack a big punch to challenge me. This Landing page was perfect to test my layout skills and I enjoyed it. This small one page website pack a big punch to challenge me. This Landing page was perfect to test my layout skills and I enjoyed it.This small one page website pack a big punch to challenge me.",
+    "next": "insure"
+  },
+
+  {
+    "id": "2",
+    "name": "Insure",
+    "imageMain": "insure.jpg",
+    "imageDesktop": "insureDesktop.jpg",
+    "imageMobile": "insureMobile.jpg",
+    "role": "web design & front-end",
+    "description": "This small one page website pack a big punch to challenge me. This Landing page was perfect to test my layout skills and I enjoyed it. This small one page website pack a big punch to challenge me. This Landing page was perfect to test my layout skills and I enjoyed it.This small one page website pack a big punch to challenge me.",
+    "next": "Holland Village"
+  },
+  {
+    "id": "3",
+    "name": "Holland Village",
+    "imageMain": "hollandVillage.jpg",
+    "imageDesktop": "hollandVillageDesktop.jpg",
+    "imageMobile": "hollandVillageMobile.jpg",
+    "role": "web design & front-end",
+    "description": "This small one page website pack a big punch to challenge me. This Landing page was perfect to test my layout skills and I enjoyed it. This small one page website pack a big punch to challenge me. This Landing page was perfect to test my layout skills and I enjoyed it.This small one page website pack a big punch to challenge me.",
+    "next": "Spring Field"
+  }
+]
