@@ -1,11 +1,12 @@
 .header {
   overflow-x: hidden !important;
+  position: relative;
 
   &__hamburger__container {
+    position: fixed;
     width: 3rem;
     height: 3rem;
     @extend .flex-center;
-    position: fixed;
     right: $page-padding;
     top: 3rem;
     z-index: 10;
@@ -63,7 +64,7 @@
   }
 
   &__overlay {
-    position: absolute;
+    position: fixed;
     left: 0;
     right: 0;
     top: 0;
@@ -75,17 +76,18 @@
   }
 
   &__nav {
+    position: fixed;
     @extend .flex-center;
-    position: absolute;
     right: 0;
     top: 0;
     bottom: 0;
     width: 40vw;
     height: 100vh;
     background-color: color(background);
-    transform: translateX(100%);
     z-index: 9;
-    overflow: hidden;
+    // clip-path: inset(0 0 0 100%);
+    transform: translateX(100%);
+    // overflow: hidden;
 
     &__list {
       @extend .inline-list;
@@ -101,6 +103,21 @@
           text-align: center;
           display: block;
           @extend .cta-secondary;
+        }
+
+        &.--social {
+          a {
+            @include font-size(h6);
+            font-family: font(secondary);
+            font-style: italic;
+            font-weight: 200;
+            letter-spacing: 0.1rem;
+            padding-top: 3rem;
+
+            &::after {
+              display: none;
+            }
+          }
         }
       }
     }

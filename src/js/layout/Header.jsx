@@ -54,6 +54,9 @@ const Header = () => {
           <li className='header__nav__list-item'>
             <Link to='/contact'>Contact</Link>
           </li>
+          <li className='header__nav__list-item --social'>
+            <a href='https://muzam.ml/'>say hi on instagram</a>
+          </li>
         </ul>
       </motion.nav>
     </header>

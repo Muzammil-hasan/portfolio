@@ -346,6 +346,12 @@ var Header = function Header() {
             to: "/contact",
             children: "Contact"
           })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+          className: "header__nav__list-item --social",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+            href: "https://muzam.ml/",
+            children: "say hi on instagram"
+          })
         })]
       })
     })]
@@ -385,8 +391,8 @@ var About = function About() {
   var breakpoints = 1050;
 
   if (width > breakpoints) {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("section", {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_layout_Header__WEBPACK_IMPORTED_MODULE_1__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("section", {
         className: "about",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
           className: "about__background"
@@ -416,11 +422,11 @@ var About = function About() {
             })]
           })]
         })]
-      })
+      })]
     });
   } else if (width <= breakpoints) {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("section", {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_layout_Header__WEBPACK_IMPORTED_MODULE_1__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("section", {
         className: "about",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
           className: "about__background"
@@ -450,7 +456,7 @@ var About = function About() {
             })]
           })]
         })]
-      })
+      })]
     });
   }
 };
@@ -522,13 +528,13 @@ var Home = function Home() {
             y1: "203",
             x2: "374.5",
             y2: "2.18557e-08",
-            stroke: "white"
+            stroke: "currentColor"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("line", {
             x1: "4.37114e-08",
             y1: "202.5",
             x2: "733",
             y2: "202.5",
-            stroke: "white"
+            stroke: "currentColor"
           })]
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
@@ -554,7 +560,7 @@ var Home = function Home() {
             x1: "733",
             y1: "0.5",
             y2: "0.5",
-            stroke: "white"
+            stroke: "currentColor"
           })
         })
       })]

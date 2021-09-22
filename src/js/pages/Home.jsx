@@ -17,14 +17,14 @@ const Home = () => {
               y1='203'
               x2='374.5'
               y2='2.18557e-08'
-              stroke='white'
+              stroke='currentColor'
             />
             <line
               x1='4.37114e-08'
               y1='202.5'
               x2='733'
               y2='202.5'
-              stroke='white'
+              stroke='currentColor'
             />
           </svg>
         </div>
@@ -43,7 +43,7 @@ const Home = () => {
             fill='none'
             xmlns='http://www.w3.org/2000/svg'
           >
-            <line x1='733' y1='0.5' y2='0.5' stroke='white' />
+            <line x1='733' y1='0.5' y2='0.5' stroke='currentColor' />
           </svg>
         </div>
       </section>

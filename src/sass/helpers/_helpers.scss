@@ -373,15 +373,14 @@
     top: 4.5rem;
     left: 25%;
     transform: scale(0);
-    transform-origin: left;
     width: 50%;
     height: 0.05rem;
     background-color: color(main);
   }
 
   &:hover::after {
-    animation: slide 1.1s alternate;
-    animation-duration: 1;
     transform: scale(1);
+    animation: slide 0.7s forwards;
+    animation-duration: 1;
   }
 }

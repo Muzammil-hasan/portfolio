@@ -9,7 +9,7 @@ const About = () => {
   if (width > breakpoints) {
     return (
       <>
-        {/* <Header /> */}
+        <Header />
         <section className='about'>
           <div className='about__background'></div>
 
@@ -51,7 +51,7 @@ const About = () => {
   } else if (width <= breakpoints) {
     return (
       <>
-        {/* <Header /> */}
+        <Header />
         <section className='about'>
           <div className='about__background'></div>
 
