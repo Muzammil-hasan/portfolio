@@ -386,7 +386,7 @@ Others
   position: absolute;
 }
 
-.flex-center, .project__titleWrapper, .work, .about__content-description.--primary, .about__content, .home, .preloader, .header__nav, .header__hamburger__container {
+.flex-center, .project__titleWrapper, .work, .projects__content, .about__content-description.--primary, .about__content, .home, .preloader, .header__nav, .header__hamburger__container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -400,7 +400,7 @@ Others
   flex-wrap: wrap;
 }
 
-.flex-between, .project__mobileImage, .project__description, .project__about, .work__imageWrapper, .header__overlay__nav-list-item a, .footer {
+.flex-between, .project__mobileImage, .project__description, .project__about, .work__imageWrapper, .projects__display, .header__overlay__nav-list-item a, .footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -485,12 +485,12 @@ Others
 }
 
 .img-background, .project__mainImage, .work__imageWrapper a,
-.work__imageWrapper .img, .about__content-image {
+.work__imageWrapper .img, .projects__display-image, .about__content-image {
   position: relative;
   overflow: hidden;
 }
 .img-background img, .project__mainImage img, .work__imageWrapper a img,
-.work__imageWrapper .img img, .about__content-image img {
+.work__imageWrapper .img img, .projects__display-image img, .about__content-image img {
   position: absolute;
   left: 0;
   top: 0;
@@ -1103,7 +1103,7 @@ small,
   right: 0;
   top: 0;
   bottom: 0;
-  background-color: #b7b7b7;
+  background-color: #000;
   pointer-events: none;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -1399,7 +1399,7 @@ small,
   position: absolute;
   background-color: #000;
   width: 100%;
-  height: 0.1rem;
+  height: 0.05rem;
   left: 0;
   top: 3rem;
   transform-origin: left;
@@ -1471,13 +1471,63 @@ small,
 }
 
 .projects {
-  color: #b7b7b7;
-  padding: 5vh 3vw 17vh;
+  height: 100vh;
+  background-color: #bdbdbd;
+  position: relative;
 }
-@media (max-width: 1050px) {
-  .projects {
-    padding: 25vh 3vw 5rem;
-  }
+.projects__content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+}
+.projects__content > p {
+  font-family: "josefin sans";
+  font-size: 1.25rem;
+  font-style: italic;
+  position: relative;
+  color: #000;
+  padding: 1rem 0;
+  font-weight: 300;
+}
+.projects__content > p::after {
+  content: "";
+  position: absolute;
+  background-color: #000;
+  width: 100%;
+  height: 0.05rem;
+  left: 0;
+  top: 3rem;
+  transform-origin: left;
+}
+.projects__content-title {
+  font-size: 2rem;
+  width: 55%;
+  text-align: center;
+  line-height: 1.2;
+}
+.projects::after, .projects::before {
+  content: "";
+  position: fixed;
+  background-color: #000;
+  width: 14rem;
+  height: 0.05rem;
+  left: 43.5vw;
+  transform: rotate(90deg);
+}
+.projects::before {
+  top: 12rem;
+}
+.projects::after {
+  bottom: 11rem;
+}
+.projects__display {
+  padding: 11% 12%;
+}
+.projects__display-image {
+  width: 20rem;
+  height: 30rem;
 }
 
 .work {

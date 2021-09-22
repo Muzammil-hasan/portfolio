@@ -30,7 +30,7 @@ const Header = () => {
 
       <motion.div
         initial={{ opacity: 0 }}
-        animate={active ? { opacity: 0.5 } : { opacity: 0 }}
+        animate={active ? { opacity: 0.4 } : { opacity: 0 }}
         transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
         className='header__overlay'
       ></motion.div>
