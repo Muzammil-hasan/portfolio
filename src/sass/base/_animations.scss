@@ -39,7 +39,7 @@
 }
 
 @keyframes slideIn {
-  0% {
+  from {
     -webkit-transform: scaleX(0);
     -ms-transform: scaleX(0);
     -o-transform: scaleX(0);
@@ -47,15 +47,7 @@
   }
 
   /* Finish changes by here */
-  15% {
-    -webkit-transform: scaleX(1);
-    -ms-transform: scaleX(1);
-    -o-transform: scaleX(1);
-    transform: scaleX(1);
-  }
-
-  /* Between 20% and 100%, nothing changes */
-  100% {
+  to {
     -webkit-transform: scaleX(1);
     -ms-transform: scaleX(1);
     -o-transform: scaleX(1);

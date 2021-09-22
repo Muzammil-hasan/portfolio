@@ -8,7 +8,7 @@
     position: fixed;
     right: $page-padding;
     top: 3rem;
-    z-index: 3;
+    z-index: 10;
 
     &-hamburger {
       background-color: transparent;
@@ -71,6 +71,7 @@
     background-color: color(background-lighter);
     pointer-events: none;
     user-select: none;
+    z-index: 8;
   }
 
   &__nav {
@@ -83,7 +84,7 @@
     height: 100vh;
     background-color: color(background);
     transform: translateX(100%);
-    z-index: 2;
+    z-index: 9;
     overflow: hidden;
 
     &__list {
