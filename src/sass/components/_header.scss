@@ -2,6 +2,31 @@
   overflow-x: hidden !important;
   position: relative;
 
+  &__logo {
+    position: fixed;
+    width: 6rem;
+    height: 3.6rem;
+    left: $page-padding;
+    top: 3rem;
+    z-index: 10;
+
+    > svg {
+      color: color(main);
+      width: 100%;
+      height: auto;
+
+      .alphabet-m:nth-child(2) {
+        > path {
+          color: lawngreen;
+        }
+      }
+
+      line {
+        color: color(background);
+      }
+    }
+  }
+
   &__hamburger__container {
     @extend .flex-center;
     transform: translateY(-1rem);
@@ -23,6 +48,7 @@
         transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
         width: 5rem;
         height: 5rem;
+        color: color(main);
 
         path {
           transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1),

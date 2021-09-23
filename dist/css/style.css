@@ -512,7 +512,7 @@ Others
   display: block;
   content: "";
   opacity: 0.5;
-  background-color: #bdbdbd;
+  background-color: #202020;
 }
 
 .heading-reveal > *, .project__titleWrapper > *, .work__titleWrapper > * {
@@ -520,7 +520,7 @@ Others
   overflow: hidden;
 }
 .heading-reveal > * > *, .project__titleWrapper > * > *, .work__titleWrapper > * > * {
-  color: #000;
+  color: white;
   font-family: "Voyage";
   transform: translateY(200%);
   display: block;
@@ -532,7 +532,7 @@ Others
   overflow: hidden;
 }
 .text-reveal > div > span, .skills__container > div > span {
-  color: #000;
+  color: white;
   font-family: "josefin sans";
   transform: translateY(200%);
   display: block;
@@ -555,31 +555,31 @@ Others
 }
 
 .bg-black {
-  background-color: #bdbdbd;
+  background-color: #202020;
 }
 
 .bg-white {
-  background-color: #000;
+  background-color: white;
 }
 
 .txt-black {
-  color: #bdbdbd;
+  color: #202020;
 }
 
 .txt-white {
-  color: #000;
+  color: white;
 }
 
 .sudo-bg-black::after, .sudo-bg-black::before {
-  background-color: #bdbdbd;
+  background-color: #202020;
 }
 
 .sudo-bg-white::after, .sudo-bg-white::before {
-  background-color: #000;
+  background-color: white;
 }
 
 .sudo-txt-black::after, .sudo-txt-black::before {
-  color: #bdbdbd;
+  color: #202020;
 }
 
 .hide {
@@ -621,7 +621,7 @@ Others
 .section-title {
   text-align: center;
   padding: 0 6vw 2rem 6vw;
-  color: #000;
+  color: white;
   position: relative;
 }
 .section-title h2 {
@@ -657,7 +657,7 @@ Others
   top: 50%;
   left: -6rem;
   width: 5rem;
-  background-color: #000;
+  background-color: white;
   height: 0.1rem;
   transform-origin: left;
   -webkit-backface-visibility: hidden;
@@ -675,7 +675,7 @@ Others
 .cta-default, .footer__cta a {
   font-size: 0.9rem;
   font-family: "Catamaran";
-  color: #000;
+  color: white;
   position: relative;
   font-weight: 600;
   display: block;
@@ -717,7 +717,7 @@ Others
   transform: scale(0);
   width: 50%;
   height: 0.05rem;
-  background-color: #000;
+  background-color: white;
 }
 .cta-secondary:hover::after, .header__nav__list-item a:hover::after {
   transform: scale(1);
@@ -731,7 +731,7 @@ Others
 # Base
 --------------------------------------------------------------*/
 body {
-  color: #000;
+  color: white;
   font-family: "Voyage";
   margin: 0;
   padding: 0;
@@ -1045,6 +1045,25 @@ small,
   overflow-x: hidden !important;
   position: relative;
 }
+.header__logo {
+  position: fixed;
+  width: 6rem;
+  height: 3.6rem;
+  left: 3vw;
+  top: 3rem;
+  z-index: 10;
+}
+.header__logo > svg {
+  color: white;
+  width: 100%;
+  height: auto;
+}
+.header__logo > svg .alphabet-m:nth-child(2) > path {
+  color: lawngreen;
+}
+.header__logo > svg line {
+  color: #202020;
+}
 .header__hamburger__container {
   transform: translateY(-1rem);
   position: fixed;
@@ -1065,6 +1084,7 @@ small,
   transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
   width: 5rem;
   height: 5rem;
+  color: white;
 }
 .header__hamburger__container-hamburger svg path {
   transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dasharray 500ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 500ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -1117,7 +1137,7 @@ small,
   right: 0;
   top: 0;
   bottom: 0;
-  background-color: #000;
+  background-color: white;
   pointer-events: none;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -1132,7 +1152,7 @@ small,
   bottom: 0;
   width: 40vw;
   height: 100vh;
-  background-color: #bdbdbd;
+  background-color: #202020;
   z-index: 9;
   transform: translateX(100%);
 }
@@ -1140,7 +1160,7 @@ small,
   margin-bottom: 1rem;
 }
 .header__nav__list-item a {
-  color: #000;
+  color: white;
   font-size: 3rem;
   text-align: center;
   display: block;
@@ -1179,7 +1199,7 @@ small,
 .preloader__right, .preloader__left {
   width: 50%;
   height: 100vh;
-  background-color: #000;
+  background-color: white;
 }
 
 .footer {
@@ -1191,7 +1211,7 @@ small,
   width: 100%;
   padding: 0 3vw;
   height: 15vh;
-  background-color: #bdbdbd;
+  background-color: #202020;
 }
 .footer__cta {
   overflow-y: hidden;
@@ -1239,7 +1259,7 @@ small,
 }
 .header__overlay__nav-list-item a > div {
   position: relative;
-  color: #bdbdbd;
+  color: #202020;
   font-family: "Voyage";
   transform: translateY(200%);
   display: block;
@@ -1255,7 +1275,7 @@ small,
   top: 0;
   width: 105%;
   height: 100%;
-  background-color: #000;
+  background-color: white;
   opacity: 0.7;
   -webkit-clip-path: inset(0% 0% 0% 100%);
           clip-path: inset(0% 0% 0% 100%);
@@ -1265,7 +1285,7 @@ small,
   transition: clip-path 0.8s cubic-bezier(0.36, 0.14, 0, 1), -webkit-clip-path 0.8s cubic-bezier(0.36, 0.14, 0, 1);
 }
 .header__overlay__nav-list-item a svg {
-  color: #bdbdbd;
+  color: #202020;
   width: 4rem;
   margin-right: 3rem;
   transition: transform 0.6s cubic-bezier(0.36, 0.14, 0, 1);
@@ -1281,12 +1301,12 @@ small,
   font-family: "Catamaran";
   font-size: 1.25rem;
   top: -1rem;
-  color: #bdbdbd;
+  color: #202020;
 }
 .header__overlay__nav-list-item .stroke {
   height: 1px;
   width: 88vw;
-  background-color: #bdbdbd;
+  background-color: #202020;
   transform-origin: left;
 }
 .header__overlay__nav-list:hover li a > div > span {
@@ -1315,7 +1335,7 @@ small,
 --------------------------------------------------------------*/
 .home {
   padding: 0 3vw;
-  background-color: #bdbdbd;
+  background-color: #202020;
   flex-direction: column;
   width: 100%;
   height: 100vh;
@@ -1355,7 +1375,7 @@ small,
   width: 35vw;
 }
 .home__stroke svg line {
-  stroke: #000;
+  stroke: white;
 }
 .home__stroke.second {
   top: 85vh;
@@ -1376,7 +1396,7 @@ small,
 }
 
 .about {
-  background-color: #bdbdbd;
+  background-color: #202020;
   height: auto;
   padding: 13.7rem 0;
   position: relative;
@@ -1387,7 +1407,7 @@ small,
   height: 40rem;
   left: 46%;
   top: 13vh;
-  background-color: #b7b7b7;
+  background-color: #b8b8b8;
 }
 .about__content-image {
   width: 20rem;
@@ -1405,13 +1425,13 @@ small,
   font-size: 1.25rem;
   font-style: italic;
   position: relative;
-  color: #000;
+  color: white;
   padding: 1rem 0;
 }
 .about__content-description > a::after {
   content: "";
   position: absolute;
-  background-color: #000;
+  background-color: white;
   width: 100%;
   height: 0.05rem;
   left: 0;
@@ -1485,8 +1505,8 @@ small,
 }
 
 .projects {
-  height: 100vh;
-  background-color: #bdbdbd;
+  height: auto;
+  background-color: #202020;
   position: relative;
 }
 .projects__content {
@@ -1501,14 +1521,14 @@ small,
   font-size: 1.25rem;
   font-style: italic;
   position: relative;
-  color: #000;
+  color: white;
   padding: 1rem 0;
   font-weight: 300;
 }
 .projects__content > p::after {
   content: "";
   position: absolute;
-  background-color: #000;
+  background-color: white;
   width: 100%;
   height: 0.05rem;
   left: 0;
@@ -1519,14 +1539,14 @@ small,
   font-size: 2rem;
   width: 55%;
   text-align: center;
-  line-height: 1.2;
+  line-height: 1.1;
 }
 .projects::after, .projects::before {
   content: "";
   position: fixed;
-  background-color: #000;
+  background-color: white;
   width: 14rem;
-  height: 0.05rem;
+  height: 0.01rem;
   left: 43.5vw;
   transform: rotate(90deg);
 }
@@ -1540,8 +1560,8 @@ small,
   padding: 11% 12%;
 }
 .projects__display-image {
-  width: 20rem;
-  height: 30rem;
+  width: 22rem;
+  height: 36.25rem;
 }
 
 .work {
@@ -1563,7 +1583,7 @@ small,
 }
 .work__titleWrapper-line > span {
   font-size: 10rem;
-  color: #b7b7b7;
+  color: #b8b8b8;
   word-spacing: -0.5rem;
   text-align: center;
   opacity: 0;
@@ -1624,7 +1644,7 @@ small,
 }
 
 .project {
-  color: #b7b7b7;
+  color: #b8b8b8;
   padding: 15rem 0;
 }
 .project__about {
@@ -1655,7 +1675,7 @@ small,
 }
 .project__titleWrapper-line > span {
   font-size: 11rem;
-  color: #b7b7b7;
+  color: #b8b8b8;
 }
 .project__subtitle {
   font-size: 1.25rem;
@@ -1674,7 +1694,7 @@ small,
   height: 75vh;
 }
 .project__description .arrow {
-  fill: #b7b7b7;
+  fill: #b8b8b8;
   width: 7rem;
   align-self: flex-start;
 }
@@ -1705,4 +1725,10 @@ small,
      object-fit: cover;
   -o-object-position: center center;
      object-position: center center;
+}
+
+.contact {
+  display: grid;
+  place-content: center;
+  height: 100vh;
 }
