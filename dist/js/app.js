@@ -289,7 +289,7 @@ var Header = function Header() {
             x2: "26.7",
             y2: "97",
             stroke: "currentColor",
-            "stroke-width": "5"
+            strokeWidth: "5"
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("g", {
           className: "alphabet-u",
@@ -302,7 +302,7 @@ var Header = function Header() {
             x2: "138.5",
             y2: "97",
             stroke: "currentColor",
-            "stroke-width": "5"
+            strokeWidth: "5"
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("g", {
           className: "alphabet-z",
@@ -315,7 +315,7 @@ var Header = function Header() {
             x2: "197",
             y2: "80.3",
             stroke: "currentColor",
-            "stroke-width": "5"
+            strokeWidth: "5"
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("g", {
           className: "alphabet-a",
@@ -328,7 +328,7 @@ var Header = function Header() {
             x2: "271",
             y2: "62.5",
             stroke: "currentColor",
-            "stroke-width": "5"
+            strokeWidth: "5"
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("g", {
           className: "alphabet-m",
@@ -341,7 +341,7 @@ var Header = function Header() {
             x2: "293.7",
             y2: "97",
             stroke: "currentColor",
-            "stroke-width": "5"
+            strokeWidth: "5"
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
           className: "tm",
@@ -398,7 +398,7 @@ var Header = function Header() {
         opacity: 0
       },
       animate: active ? {
-        opacity: 0.4
+        opacity: 0.6
       } : {
         opacity: 0
       },
@@ -732,7 +732,7 @@ var Projects = function Projects() {
           children: "our work"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
           className: "projects__content-title",
-          children: "Explore some of my latest projects."
+          children: "Explore some of my recent projects."
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "projects__display",

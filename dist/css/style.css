@@ -512,7 +512,7 @@ Others
   display: block;
   content: "";
   opacity: 0.5;
-  background-color: #cccccc;
+  background-color: #202020;
 }
 
 .heading-reveal > *, .project__titleWrapper > *, .work__titleWrapper > * {
@@ -520,7 +520,7 @@ Others
   overflow: hidden;
 }
 .heading-reveal > * > *, .project__titleWrapper > * > *, .work__titleWrapper > * > * {
-  color: #202020;
+  color: #f2f2f2;
   font-family: "Voyage";
   transform: translateY(200%);
   display: block;
@@ -532,7 +532,7 @@ Others
   overflow: hidden;
 }
 .text-reveal > div > span, .skills__container > div > span {
-  color: #202020;
+  color: #f2f2f2;
   font-family: "josefin sans";
   transform: translateY(200%);
   display: block;
@@ -555,31 +555,39 @@ Others
 }
 
 .bg-black {
-  background-color: #cccccc;
+  background-color: #202020;
 }
 
 .bg-white {
-  background-color: #202020;
+  background-color: #f2f2f2;
+}
+
+.bg-accent {
+  background-color: #6a6a6a;
 }
 
 .txt-black {
-  color: #cccccc;
-}
-
-.txt-white {
   color: #202020;
 }
 
-.sudo-bg-black::after, .sudo-bg-black::before {
-  background-color: #cccccc;
+.txt-white {
+  color: #f2f2f2;
 }
 
-.sudo-bg-white::after, .sudo-bg-white::before {
+.sudo-bg-black::after, .sudo-bg-black::before {
   background-color: #202020;
 }
 
+.sudo-bg-white::after, .sudo-bg-white::before {
+  background-color: #f2f2f2;
+}
+
+.sudo-bg-accent::after, .sudo-bg-accent::before {
+  background-color: #6a6a6a;
+}
+
 .sudo-txt-black::after, .sudo-txt-black::before {
-  color: #cccccc;
+  color: #202020;
 }
 
 .hide {
@@ -621,7 +629,7 @@ Others
 .section-title {
   text-align: center;
   padding: 0 6vw 2rem 6vw;
-  color: #202020;
+  color: #f2f2f2;
   position: relative;
 }
 .section-title h2 {
@@ -657,7 +665,7 @@ Others
   top: 50%;
   left: -6rem;
   width: 5rem;
-  background-color: #202020;
+  background-color: #f2f2f2;
   height: 0.1rem;
   transform-origin: left;
   -webkit-backface-visibility: hidden;
@@ -675,7 +683,7 @@ Others
 .cta-default, .footer__cta a {
   font-size: 0.9rem;
   font-family: "Catamaran";
-  color: #202020;
+  color: #f2f2f2;
   position: relative;
   font-weight: 600;
   display: block;
@@ -717,7 +725,7 @@ Others
   left: 25%;
   height: 0.01rem;
   top: 4.5rem;
-  background-color: #202020;
+  background-color: #f2f2f2;
   transform: scale(0);
   transition: transform 300ms ease-in-out;
   transform-origin: right;
@@ -740,7 +748,7 @@ Others
   transform: scale(1);
   width: 100%;
   height: 0.05rem;
-  background-color: #202020;
+  background-color: #f2f2f2;
   will-change: transform;
 }
 .cta-third:hover::after, .about__content-description > a:hover::after {
@@ -755,7 +763,7 @@ Others
 # Base
 --------------------------------------------------------------*/
 body {
-  color: #202020;
+  color: #f2f2f2;
   font-family: "Voyage";
   margin: 0;
   padding: 0;
@@ -960,7 +968,7 @@ body {
 
 @font-face {
   font-family: "Voyage";
-  font-weight: thin;
+  font-weight: 200;
   src: url(../../../dist/fonts/made_bon_voyage_thin_personal_use-webfont.woff);
   display: swap;
 }
@@ -1078,12 +1086,12 @@ small,
   z-index: 8;
 }
 .header__logo > svg {
-  color: #202020;
+  color: #f2f2f2;
   width: 100%;
   height: auto;
 }
 .header__logo > svg line {
-  color: #cccccc;
+  color: #202020;
 }
 .header__hamburger__container {
   transform: translateY(-1rem);
@@ -1105,7 +1113,7 @@ small,
   transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
   width: 5rem;
   height: 5rem;
-  color: #202020;
+  color: #f2f2f2;
 }
 .header__hamburger__container-hamburger svg path {
   transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dasharray 500ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 500ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -1136,14 +1144,14 @@ small,
   transform: translateX(9px) translateY(1px) rotate(45deg);
 }
 .header__hamburger__container-hamburger.active svg path:nth-child(2) {
-  stroke-dasharray: 225 299;
+  stroke-dasharray: 226 299;
   stroke-dashoffset: -72px;
 }
 .header__hamburger__container-hamburger.active svg path:nth-child(3) {
   transform: translateX(9px) translateY(1px) rotate(-45deg);
 }
 .header__hamburger__container-hamburger.active svg path:nth-child(4) {
-  stroke-dasharray: 225 299;
+  stroke-dasharray: 226 299;
   stroke-dashoffset: -72px;
 }
 .header__hamburger__container-hamburger.active svg path:nth-child(5) {
@@ -1158,7 +1166,7 @@ small,
   right: 0;
   top: 0;
   bottom: 0;
-  background-color: #202020;
+  background-color: #282828;
   pointer-events: none;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -1173,7 +1181,7 @@ small,
   bottom: 0;
   width: 40vw;
   height: 100vh;
-  background-color: #cccccc;
+  background-color: #202020;
   z-index: 9;
   transform: translateX(100%);
 }
@@ -1181,7 +1189,7 @@ small,
   margin-bottom: 1rem;
 }
 .header__nav__list-item a {
-  color: #202020;
+  color: #f2f2f2;
   font-size: 3rem;
   text-align: center;
   display: block;
@@ -1222,7 +1230,7 @@ small,
 .preloader__right, .preloader__left {
   width: 50%;
   height: 100vh;
-  background-color: #202020;
+  background-color: #f2f2f2;
 }
 
 .footer {
@@ -1234,7 +1242,7 @@ small,
   width: 100%;
   padding: 0 3vw;
   height: 15vh;
-  background-color: #cccccc;
+  background-color: #202020;
 }
 .footer__cta {
   overflow-y: hidden;
@@ -1282,7 +1290,7 @@ small,
 }
 .header__overlay__nav-list-item a > div {
   position: relative;
-  color: #cccccc;
+  color: #202020;
   font-family: "Voyage";
   transform: translateY(200%);
   display: block;
@@ -1298,7 +1306,7 @@ small,
   top: 0;
   width: 105%;
   height: 100%;
-  background-color: #202020;
+  background-color: #f2f2f2;
   opacity: 0.7;
   -webkit-clip-path: inset(0% 0% 0% 100%);
           clip-path: inset(0% 0% 0% 100%);
@@ -1308,7 +1316,7 @@ small,
   transition: clip-path 0.8s cubic-bezier(0.36, 0.14, 0, 1), -webkit-clip-path 0.8s cubic-bezier(0.36, 0.14, 0, 1);
 }
 .header__overlay__nav-list-item a svg {
-  color: #cccccc;
+  color: #202020;
   width: 4rem;
   margin-right: 3rem;
   transition: transform 0.6s cubic-bezier(0.36, 0.14, 0, 1);
@@ -1324,12 +1332,12 @@ small,
   font-family: "Catamaran";
   font-size: 1.25rem;
   top: -1rem;
-  color: #cccccc;
+  color: #202020;
 }
 .header__overlay__nav-list-item .stroke {
   height: 1px;
   width: 88vw;
-  background-color: #cccccc;
+  background-color: #202020;
   transform-origin: left;
 }
 .header__overlay__nav-list:hover li a > div > span {
@@ -1358,7 +1366,7 @@ small,
 --------------------------------------------------------------*/
 .home {
   padding: 0 3vw;
-  background-color: #cccccc;
+  background-color: #202020;
   flex-direction: column;
   width: 100%;
   height: 100vh;
@@ -1398,7 +1406,7 @@ small,
   width: 35vw;
 }
 .home__stroke svg line {
-  stroke: #202020;
+  stroke: #6a6a6a;
 }
 .home__stroke.second {
   top: 85vh;
@@ -1419,7 +1427,7 @@ small,
 }
 
 .about {
-  background-color: #cccccc;
+  background-color: #202020;
   height: auto;
   padding: 13.7rem 0;
   position: relative;
@@ -1430,7 +1438,7 @@ small,
   height: 40rem;
   left: 46%;
   top: 13vh;
-  background-color: #bdbdbd;
+  background-color: #282828;
 }
 .about__content-image {
   width: 20rem;
@@ -1447,7 +1455,7 @@ small,
 .about__content-description > a {
   font-size: 1.25rem;
   font-style: italic;
-  color: #202020;
+  color: #f2f2f2;
   padding: 1rem 0;
 }
 .about__content-description > a::after {
@@ -1515,7 +1523,7 @@ small,
 
 .projects {
   height: auto;
-  background-color: #cccccc;
+  background-color: #202020;
   position: relative;
 }
 .projects__content {
@@ -1530,18 +1538,18 @@ small,
   font-size: 1.25rem;
   font-style: italic;
   position: relative;
-  color: #202020;
-  padding: 1rem 0;
+  color: #f2f2f2;
+  margin: 2.5rem 0;
   font-weight: 300;
 }
 .projects__content > p::after {
   content: "";
   position: absolute;
-  background-color: #202020;
-  width: 100%;
+  background-color: #f2f2f2;
+  width: 70%;
   height: 0.05rem;
-  left: 0;
-  top: 3rem;
+  left: 15%;
+  top: 2.3rem;
   transform-origin: left;
 }
 .projects__content-title {
@@ -1553,17 +1561,16 @@ small,
 .projects::after, .projects::before {
   content: "";
   position: fixed;
-  background-color: #202020;
-  width: 14rem;
-  height: 0.01rem;
-  left: 43.5vw;
-  transform: rotate(90deg);
+  background-color: #6a6a6a;
+  width: 0.01rem;
+  height: 14rem;
+  left: 50%;
 }
 .projects::before {
-  top: 12rem;
+  top: 6rem;
 }
 .projects::after {
-  bottom: 11rem;
+  bottom: 5rem;
 }
 .projects__display {
   padding: 11% 12%;
@@ -1592,7 +1599,7 @@ small,
 }
 .work__titleWrapper-line > span {
   font-size: 10rem;
-  color: #bdbdbd;
+  color: #282828;
   word-spacing: -0.5rem;
   text-align: center;
   opacity: 0;
@@ -1653,7 +1660,7 @@ small,
 }
 
 .project {
-  color: #bdbdbd;
+  color: #282828;
   padding: 15rem 0;
 }
 .project__about {
@@ -1684,7 +1691,7 @@ small,
 }
 .project__titleWrapper-line > span {
   font-size: 11rem;
-  color: #bdbdbd;
+  color: #282828;
 }
 .project__subtitle {
   font-size: 1.25rem;
@@ -1703,7 +1710,7 @@ small,
   height: 75vh;
 }
 .project__description .arrow {
-  fill: #bdbdbd;
+  fill: #282828;
   width: 7rem;
   align-self: flex-start;
 }
