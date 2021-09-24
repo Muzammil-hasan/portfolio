@@ -22,6 +22,16 @@ const Projects = () => {
             <img src='../../../dist/images/blusouth/blusouth-main.jpg' alt='' />
           </div>
         </div>
+
+        <div className='projects__display'>
+          <div className='projects__display-image'>
+            <img src='../../../dist/images/blusouth/blusouth-main.jpg' alt='' />
+          </div>
+
+          <div className='projects__display-image'>
+            <img src='../../../dist/images/blusouth/blusouth-main.jpg' alt='' />
+          </div>
+        </div>
       </section>
     </>
   );

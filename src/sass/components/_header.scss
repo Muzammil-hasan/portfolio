@@ -102,49 +102,6 @@
           }
         }
       }
-
-      // svg {
-      //   width: 3.5rem;
-      //   height: 3.5rem;
-      // }
-
-      // .line {
-      //   fill: none;
-      //   stroke: color(main);
-      //   stroke-width: 0.1rem;
-      //   transition: stroke-dasharray 800ms cubic-bezier(0.4, 0, 0.2, 1),
-      //     stroke-dashoffset 800ms cubic-bezier(0.4, 0, 0.2, 1);
-
-      //   &-1 {
-      //     stroke-dasharray: 60 207;
-      //     stroke-width: 0.1rem;
-      //   }
-      //   &-2 {
-      //     stroke-dasharray: 60 207;
-      //     stroke-width: 0.1rem;
-      //   }
-      //   &-3 {
-      //     stroke-dasharray: 60 207;
-      //     stroke-width: 0.1rem;
-      //   }
-      // }
-      // &.active .line {
-      //   &-1 {
-      //     stroke-dasharray: 90 207;
-      //     stroke-dashoffset: -134;
-      //     stroke-width: 0.1rem;
-      //   }
-      //   &-2 {
-      //     stroke-dasharray: 0 60;
-      //     stroke-dashoffset: -30;
-      //     stroke-width: 0.1rem;
-      //   }
-      //   &-3 {
-      //     stroke-dasharray: 90 207;
-      //     stroke-dashoffset: -134;
-      //     stroke-width: 0.1rem;
-      //   }
-      // }
     }
   }
 
@@ -170,9 +127,7 @@
     height: 100vh;
     background-color: color(background);
     z-index: 9;
-    // clip-path: inset(0 0 0 100%);
     transform: translateX(100%);
-    // overflow: hidden;
 
     &__list {
       @extend .inline-list;
@@ -183,21 +138,23 @@
         }
 
         a {
+          @extend .cta-secondary;
           color: color(main);
           font-size: 3rem;
           text-align: center;
           display: block;
-          @extend .cta-secondary;
+          position: relative;
         }
 
         &.--social {
           a {
-            @include font-size(h6);
+            @include font-size(small);
             font-family: font(secondary);
             font-style: italic;
             font-weight: 200;
             letter-spacing: 0.1rem;
             padding-top: 3rem;
+            word-spacing: -0.1rem;
 
             &::after {
               display: none;
