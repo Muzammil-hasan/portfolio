@@ -170,6 +170,21 @@
       &__nav {
         width: 100vw;
       }
+      &__logo {
+        left: $mobile-page-padding;
+        width: 7rem;
+        z-index: 10;
+      }
+
+      &__hamburger__container {
+        right: $mobile-page-padding;
+        top: 1.5rem;
+
+        svg {
+          width: 7rem;
+          height: 7rem;
+        }
+      }
     }
   }
 }

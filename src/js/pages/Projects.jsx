@@ -1,7 +1,35 @@
 import React from "react";
 import Header from "../layout/Header";
+import { motion } from "framer-motion";
 
 const Projects = () => {
+  const projects = [
+    {
+      id: 1,
+      name: "Blu South",
+      imageMain: "../../../dist/images/blusouth/blusouth-left.jpg",
+      siteLink: "https://www.blusouthtownhomes.com/",
+    },
+    {
+      id: 2,
+      name: "Spring Field",
+      imageMain: "../../../dist/images/springfield/springfield-left.jpg",
+      siteLink: "https://www.springfieldal.com/",
+    },
+    {
+      id: 3,
+      name: "Loop studio",
+      imageMain: "../../../dist/images/springfield/springfield-right.jpg",
+      siteLink: "https://muzam.ml/",
+    },
+    {
+      id: 4,
+      name: "holland village",
+      imageMain: "../../../dist/images/blusouth/blusouth-main.jpg",
+      siteLink: "https://muzam.ml/",
+    },
+  ];
+
   return (
     <>
       <Header />
@@ -13,25 +41,38 @@ const Projects = () => {
           </h1>
         </div>
 
-        <div className='projects__display'>
-          <div className='projects__display-image'>
-            <img src='../../../dist/images/blusouth/blusouth-main.jpg' alt='' />
-          </div>
-
-          <div className='projects__display-image'>
-            <img src='../../../dist/images/blusouth/blusouth-main.jpg' alt='' />
-          </div>
-        </div>
-
-        <div className='projects__display'>
-          <div className='projects__display-image'>
-            <img src='../../../dist/images/blusouth/blusouth-main.jpg' alt='' />
-          </div>
-
-          <div className='projects__display-image'>
-            <img src='../../../dist/images/blusouth/blusouth-main.jpg' alt='' />
-          </div>
-        </div>
+        <ul className='projects__container'>
+          {projects.map((project) => {
+            const { imageMain, id, name, siteLink } = project;
+            return (
+              <li
+                key={id}
+                className={`projects__container__item ${name
+                  .toLowerCase()
+                  .split(" ")
+                  .join("-")}`}
+              >
+                <div className='projects__container__item-image'>
+                  <a href={siteLink}>
+                    <motion.img
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ ease: "easeInOut", duration: 0.5 }}
+                      src={imageMain}
+                      alt={name}
+                    />
+                  </a>
+                </div>
+                <a
+                  className='projects__container__item-cta'
+                  href={siteLink}
+                  target='_blank'
+                >
+                  {name}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
       </section>
     </>
   );

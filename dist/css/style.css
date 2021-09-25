@@ -386,7 +386,7 @@ Others
   position: absolute;
 }
 
-.flex-center, .project__titleWrapper, .work, .projects__content, .about__content-description.--primary, .about__content, .home, .preloader, .header__nav, .header__hamburger__container {
+.flex-center, .project__titleWrapper, .work, .projects__container__item, .projects__content, .about__content-description.--primary, .about__content, .home, .preloader, .header__nav, .header__hamburger__container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -400,7 +400,7 @@ Others
   flex-wrap: wrap;
 }
 
-.flex-between, .project__mobileImage, .project__description, .project__about, .work__imageWrapper, .projects__display, .header__overlay__nav-list-item a, .footer {
+.flex-between, .project__mobileImage, .project__description, .project__about, .work__imageWrapper, .projects__container, .header__overlay__nav-list-item a, .footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -460,7 +460,7 @@ Others
   background: transparent;
 }
 
-.inline-list, .header__overlay__nav-list, .header__nav__list {
+.inline-list, .projects__container, .header__overlay__nav-list, .header__nav__list {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -485,12 +485,12 @@ Others
 }
 
 .img-background, .project__mainImage, .work__imageWrapper a,
-.work__imageWrapper .img, .projects__display-image, .about__content-image {
+.work__imageWrapper .img, .projects__container__item-image, .about__content-image {
   position: relative;
   overflow: hidden;
 }
 .img-background img, .project__mainImage img, .work__imageWrapper a img,
-.work__imageWrapper .img img, .projects__display-image img, .about__content-image img {
+.work__imageWrapper .img img, .projects__container__item-image img, .about__content-image img {
   position: absolute;
   left: 0;
   top: 0;
@@ -736,11 +736,11 @@ Others
   transform-origin: left;
 }
 
-.cta-third, .about__content-description > a {
+.cta-third, .projects__container__item-cta, .about__content-description > a {
   position: relative;
   display: block;
 }
-.cta-third::after, .about__content-description > a::after {
+.cta-third::after, .projects__container__item-cta::after, .about__content-description > a::after {
   content: "";
   position: absolute;
   top: 3rem;
@@ -751,7 +751,7 @@ Others
   background-color: #f2f2f2;
   will-change: transform;
 }
-.cta-third:hover::after, .about__content-description > a:hover::after {
+.cta-third:hover::after, .projects__container__item-cta:hover::after, .about__content-description > a:hover::after {
   transform: scale(1);
   -webkit-animation: slide 0.8s forwards;
           animation: slide 0.8s forwards;
@@ -770,6 +770,7 @@ body {
   overflow-x: hidden;
   box-sizing: border-box;
   position: relative;
+  background-color: #202020;
 }
 body * {
   box-sizing: border-box;
@@ -1211,6 +1212,19 @@ small,
   .header__nav {
     width: 100vw;
   }
+  .header__logo {
+    left: 6vw;
+    width: 7rem;
+    z-index: 10;
+  }
+  .header__hamburger__container {
+    right: 6vw;
+    top: 1.5rem;
+  }
+  .header__hamburger__container svg {
+    width: 7rem;
+    height: 7rem;
+  }
 }
 
 .preloader {
@@ -1481,14 +1495,14 @@ small,
 @media (max-width: 1050px) {
   .about {
     position: relative;
-    padding: 8rem 3vw 0;
+    padding: 20vh 3vw 0;
     height: auto;
   }
   .about__background {
     width: 94vw;
     height: 42rem;
     left: 3vw;
-    top: 14.5rem;
+    top: 19.5rem;
   }
   .about__content {
     position: relative;
@@ -1522,16 +1536,18 @@ small,
 }
 
 .projects {
-  height: auto;
   background-color: #202020;
-  position: relative;
+  height: auto;
 }
 .projects__content {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   flex-direction: column;
+  position: absolute;
+  height: 100vh;
+  left: 0;
+  top: 7rem;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
 }
 .projects__content > p {
   font-family: "josefin sans";
@@ -1554,30 +1570,114 @@ small,
 }
 .projects__content-title {
   font-size: 2rem;
-  width: 55%;
+  width: 16.5%;
   text-align: center;
   line-height: 1.1;
 }
-.projects::after, .projects::before {
+.projects__content::after, .projects__content::before {
   content: "";
-  position: fixed;
+  position: absolute;
   background-color: #6a6a6a;
   width: 0.01rem;
   height: 14rem;
   left: 50%;
 }
-.projects::before {
+.projects__content::before {
   top: 6rem;
 }
-.projects::after {
-  bottom: 5rem;
+.projects__content::after {
+  bottom: -12rem;
+  height: 28rem;
 }
-.projects__display {
-  padding: 11% 12%;
+.projects__container {
+  padding: 11% 0 0;
 }
-.projects__display-image {
-  width: 22rem;
-  height: 36.25rem;
+.projects__container__item {
+  flex-direction: column;
+  width: 50%;
+  margin-bottom: 13vh;
+}
+.projects__container__item-image {
+  width: 20rem;
+  height: 31.25rem;
+}
+.projects__container__item-cta {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: #f2f2f2;
+  width: 10rem;
+  text-align: center;
+  font-family: "josefin sans";
+  margin: 2rem auto;
+}
+.projects__container__item-cta::before {
+  content: url(../../../dist/images/arrow.svg);
+  position: absolute;
+  right: 0.5rem;
+  top: -0.8rem;
+  width: 1rem;
+  opacity: 0.7;
+}
+.projects__container__item-cta::after {
+  width: 34%;
+  left: 33%;
+  top: 2.3rem;
+  transform-origin: left;
+}
+.projects__container__item.blu-south a::before {
+  right: 1.1rem;
+}
+.projects__container__item.holland-village a::before {
+  right: 0rem;
+}
+@media (max-width: 1050px) {
+  .projects__content {
+    height: auto;
+    position: relative;
+    padding: 28vh 0 13vh;
+  }
+  .projects__content > p {
+    font-size: 1.953rem;
+  }
+  .projects__content > p::after {
+    top: 3.3rem;
+  }
+  .projects__content-title {
+    font-size: 3.052rem;
+    width: 62.5%;
+  }
+  .projects__content::after {
+    display: none;
+  }
+  .projects__container {
+    flex-direction: column;
+    padding: 13vh 0 0;
+  }
+  .projects__container__item {
+    width: 100%;
+  }
+  .projects__container__item-image {
+    width: 30rem;
+    height: 40.25rem;
+  }
+  .projects__container__item-cta {
+    font-size: 1.953rem;
+    width: 15rem;
+    margin: 4rem 0;
+  }
+  .projects__container__item-cta::after {
+    top: 4.3rem;
+  }
+  .projects__container__item-cta::before {
+    top: -1.3rem;
+    right: 0.9rem;
+  }
+  .projects__container__item.blu-south a::before {
+    right: 1.7rem;
+  }
+  .projects__container__item.holland-village a::before {
+    right: 0rem;
+  }
 }
 
 .work {

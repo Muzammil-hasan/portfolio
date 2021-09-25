@@ -1,15 +1,17 @@
 .projects {
-  height: auto;
   background-color: color(background);
-  position: relative;
+  height: auto;
 
   &__content {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     @extend .flex-center;
     flex-direction: column;
+    position: absolute;
+    height: 100vh;
+    left: 0;
+    top: 7rem;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
 
     > p {
       font-family: font(text);
@@ -34,38 +36,154 @@
 
     &-title {
       font-size: 2rem;
-      width: 55%;
+      width: 16.5%;
       text-align: center;
       line-height: 1.1;
     }
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: color(accent);
+      width: 0.01rem;
+      height: 14rem;
+      left: 50%;
+    }
+
+    &::before {
+      top: 6rem;
+    }
+
+    &::after {
+      bottom: -12rem;
+      height: 28rem;
+    }
   }
 
-  &::after,
-  &::before {
-    content: "";
-    position: fixed;
-    background-color: color(accent);
-    width: 0.01rem;
-    height: 14rem;
-    left: 50%;
-  }
-
-  &::before {
-    top: 6rem;
-  }
-
-  &::after {
-    bottom: 5rem;
-  }
-
-  &__display {
+  &__container {
+    @extend .inline-list;
     @extend .flex-between;
-    padding: 11% 12%;
+    padding: 11% 0 0;
 
-    &-image {
-      @extend .img-background;
-      width: 22rem;
-      height: 36.25rem;
+    &__item {
+      @extend .flex-center;
+      flex-direction: column;
+      width: 50%;
+      margin-bottom: 13vh;
+
+      &-image {
+        @extend .img-background;
+        width: 20rem;
+        height: 31.25rem;
+      }
+
+      &-cta {
+        @include font-size(h5);
+        font-weight: 300;
+        color: color(main);
+        width: 10rem;
+        text-align: center;
+        font-family: font(text);
+        margin: 2rem auto;
+        @extend .cta-third;
+
+        &::before {
+          content: url(../../../dist/images/arrow.svg);
+          position: absolute;
+          right: 0.5rem;
+          top: -0.8rem;
+          width: 1rem;
+          opacity: 0.7;
+        }
+
+        &::after {
+          width: 34%;
+          left: 33%;
+          top: 2.3rem;
+          transform-origin: left;
+        }
+      }
+
+      &.blu-south {
+        a::before {
+          right: 1.1rem;
+        }
+      }
+
+      &.holland-village {
+        a::before {
+          right: 0rem;
+        }
+      }
+    }
+  }
+
+  @include device(mobileAndTablet) {
+    & {
+      &__content {
+        height: auto;
+        position: relative;
+        padding: 28vh 0 13vh;
+
+        > p {
+          @include font-size(h3);
+
+          &::after {
+            top: 3.3rem;
+          }
+        }
+
+        &-title {
+          @include font-size(h1);
+          width: 62.5%;
+        }
+
+        &::after {
+          display: none;
+        }
+      }
+
+      &__container {
+        flex-direction: column;
+        padding: 13vh 0 0;
+
+        &__item {
+          width: 100%;
+
+          &-image {
+            width: 30rem;
+            height: 40.25rem;
+          }
+
+          &-cta {
+            @include font-size(h3);
+            width: 15rem;
+            margin: 4rem 0;
+
+            &::after {
+              top: 4.3rem;
+            }
+
+            &::before {
+              top: -1.3rem;
+              right: 0.9rem;
+            }
+          }
+
+          &.blu-south {
+            a::before {
+              right: 1.7rem;
+            }
+          }
+
+          &.holland-village {
+            a::before {
+              right: 0rem;
+            }
+          }
+        }
+      }
     }
   }
 }

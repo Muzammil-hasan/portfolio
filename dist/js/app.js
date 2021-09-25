@@ -715,6 +715,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _layout_Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../layout/Header */ "./src/js/layout/Header.jsx");
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/render/dom/motion.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -722,7 +723,29 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var Projects = function Projects() {
+  var projects = [{
+    id: 1,
+    name: "Blu South",
+    imageMain: "../../../dist/images/blusouth/blusouth-left.jpg",
+    siteLink: "https://www.blusouthtownhomes.com/"
+  }, {
+    id: 2,
+    name: "Spring Field",
+    imageMain: "../../../dist/images/springfield/springfield-left.jpg",
+    siteLink: "https://www.springfieldal.com/"
+  }, {
+    id: 3,
+    name: "Loop studio",
+    imageMain: "../../../dist/images/springfield/springfield-right.jpg",
+    siteLink: "https://muzam.ml/"
+  }, {
+    id: 4,
+    name: "holland village",
+    imageMain: "../../../dist/images/blusouth/blusouth-main.jpg",
+    siteLink: "https://muzam.ml/"
+  }];
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_layout_Header__WEBPACK_IMPORTED_MODULE_1__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
       className: "projects",
@@ -734,36 +757,39 @@ var Projects = function Projects() {
           className: "projects__content-title",
           children: "Explore some of my recent projects."
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "projects__display",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "projects__display-image",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-            src: "../../../dist/images/blusouth/blusouth-main.jpg",
-            alt: ""
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "projects__display-image",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-            src: "../../../dist/images/blusouth/blusouth-main.jpg",
-            alt: ""
-          })
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "projects__display",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "projects__display-image",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-            src: "../../../dist/images/blusouth/blusouth-main.jpg",
-            alt: ""
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "projects__display-image",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-            src: "../../../dist/images/blusouth/blusouth-main.jpg",
-            alt: ""
-          })
-        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("ul", {
+        className: "projects__container",
+        children: projects.map(function (project) {
+          var imageMain = project.imageMain,
+              id = project.id,
+              name = project.name,
+              siteLink = project.siteLink;
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("li", {
+            className: "projects__container__item ".concat(name.toLowerCase().split(" ").join("-")),
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              className: "projects__container__item-image",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+                href: siteLink,
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_3__.motion.img, {
+                  whileHover: {
+                    scale: 1.05
+                  },
+                  transition: {
+                    ease: "easeInOut",
+                    duration: 0.5
+                  },
+                  src: imageMain,
+                  alt: name
+                })
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+              className: "projects__container__item-cta",
+              href: siteLink,
+              target: "_blank",
+              children: name
+            })]
+          }, id);
+        })
       })]
     })]
   });

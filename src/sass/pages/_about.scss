@@ -40,14 +40,6 @@
         @extend .cta-third;
 
         &::after {
-          // // content: "";
-          // // position: absolute;
-          // // background-color: color(main);
-          // width: 100%;
-          // // height: 0.05rem;
-          // left: 0;
-          // top: 3rem;
-          // // transform-origin: left;
           will-change: transform;
         }
       }
@@ -78,14 +70,14 @@
   @include device(mobileAndTablet) {
     & {
       position: relative;
-      padding: 8rem $page-padding 0;
+      padding: 20vh $page-padding 0;
       height: auto;
 
       &__background {
         width: (100vw - $page-padding * 2);
         height: 42rem;
         left: $page-padding;
-        top: 14.5rem;
+        top: 19.5rem;
       }
 
       &__content {
