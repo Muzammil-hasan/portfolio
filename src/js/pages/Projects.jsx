@@ -1,8 +1,7 @@
 import React from "react";
-import Header from "../layout/Header";
 import { motion } from "framer-motion";
 
-const Projects = () => {
+const Projects = ({ dot, mouseOverEvent, mouseOutEvent }) => {
   const projects = [
     {
       id: 1,
@@ -31,50 +30,51 @@ const Projects = () => {
   ];
 
   return (
-    <>
-      <Header />
-      <section className='projects'>
-        <div className='projects__content'>
-          <p>our work</p>
-          <h1 className='projects__content-title'>
-            Explore some of my recent projects.
-          </h1>
-        </div>
+    <section className='projects'>
+      <div className='projects__content'>
+        <p>our work</p>
+        <h1 className='projects__content-title'>
+          Explore some of my recent projects.
+        </h1>
+      </div>
 
-        <ul className='projects__container'>
-          {projects.map((project) => {
-            const { imageMain, id, name, siteLink } = project;
-            return (
-              <li
-                key={id}
-                className={`projects__container__item ${name
-                  .toLowerCase()
-                  .split(" ")
-                  .join("-")}`}
-              >
-                <div className='projects__container__item-image'>
-                  <a href={siteLink}>
-                    <motion.img
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ ease: "easeInOut", duration: 0.5 }}
-                      src={imageMain}
-                      alt={name}
-                    />
-                  </a>
-                </div>
-                <a
-                  className='projects__container__item-cta'
-                  href={siteLink}
-                  target='_blank'
-                >
-                  {name}
+      <ul className='projects__container'>
+        {projects.map((project) => {
+          const { imageMain, id, name, siteLink } = project;
+          return (
+            <li
+              key={id}
+              className={`projects__container__item ${name
+                .toLowerCase()
+                .split(" ")
+                .join("-")}`}
+            >
+              <div className='projects__container__item-image'>
+                <a href={siteLink}>
+                  <motion.img
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ ease: "easeInOut", duration: 0.5 }}
+                    src={imageMain}
+                    alt={name}
+                    onMouseOver={mouseOverEvent}
+                    onMouseOut={mouseOutEvent}
+                  />
                 </a>
-              </li>
-            );
-          })}
-        </ul>
-      </section>
-    </>
+              </div>
+              <a
+                className='projects__container__item-cta'
+                href={siteLink}
+                target='_blank'
+                onMouseOver={mouseOverEvent}
+                onMouseOut={mouseOutEvent}
+              >
+                {name}
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
   );
 };
 

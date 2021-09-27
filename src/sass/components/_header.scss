@@ -23,7 +23,6 @@
 
   &__hamburger__container {
     @extend .flex-center;
-    transform: translateY(-1rem);
     position: fixed;
     width: 3rem;
     height: 3rem;
@@ -32,6 +31,7 @@
     z-index: 10;
 
     &-hamburger {
+      transform: translateY(-0.9rem);
       background-color: transparent;
       border: none;
       cursor: pointer;
@@ -144,6 +144,7 @@
           text-align: center;
           display: block;
           position: relative;
+          text-transform: capitalize;
         }
 
         &.--social {

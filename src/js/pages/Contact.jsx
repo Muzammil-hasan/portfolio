@@ -1,6 +1,6 @@
 import React from "react";
 
-const Contact = () => {
+const Contact = ({ dot }) => {
   return (
     <section className='contact'>
       <h1>muzam</h1>
