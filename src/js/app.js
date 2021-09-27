@@ -103,7 +103,7 @@ function App() {
       <AnimatePresence exitBeforeEnter>
         <ScrollToTop>
           <Switch>
-            <Route exact path='/'>
+            <Route exact path='/home'>
               <Home />
             </Route>
             <Route exact path='/about'>
@@ -128,11 +128,7 @@ function App() {
               />
             </Route>
             <Route exact path='/projects/:id'>
-              <Project
-                dot={dot}
-                mouseOverEvent={mouseOverEvent}
-                mouseOutEvent={mouseOutEvent}
-              />
+              <Project />
             </Route>
           </Switch>
         </ScrollToTop>

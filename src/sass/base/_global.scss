@@ -29,4 +29,12 @@ body {
   p {
     margin: 0;
   }
+
+  .fade {
+    opacity: 0.6 !important;
+
+    &::after {
+      transform: scale(1);
+    }
+  }
 }
