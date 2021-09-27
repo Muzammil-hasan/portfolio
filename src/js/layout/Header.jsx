@@ -1,19 +1,9 @@
-import React, { useState, useRef, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const Header = ({ active, setActive, mouseOverEvent, mouseOutEvent }) => {
   const pages = ["home", "about", "projects", "contact"];
-  let path = "";
-
-  const usePathname = () => {
-    const location = useLocation();
-    return (path = location.pathname);
-  };
-
-  usePathname();
-
-  useEffect(() => {}, [path]);
 
   return (
     <>
@@ -181,11 +171,10 @@ const Header = ({ active, setActive, mouseOverEvent, mouseOutEvent }) => {
               return (
                 <li key={page} className='header__nav__list-item'>
                   <Link
-                    className={path.substring(1) == page ? "fade" : ""}
                     onClick={() => setActive(!active)}
                     onMouseOver={mouseOverEvent}
                     onMouseOut={mouseOutEvent}
-                    to={`/${page}`}
+                    to={`/${page !== "home" ? page : ""}`}
                   >
                     {page}
                   </Link>

@@ -103,7 +103,7 @@ function App() {
       <AnimatePresence exitBeforeEnter>
         <ScrollToTop>
           <Switch>
-            <Route exact path='/home'>
+            <Route exact path='/'>
               <Home />
             </Route>
             <Route exact path='/about'>
