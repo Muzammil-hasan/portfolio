@@ -37,12 +37,4 @@ body {
       transform: scale(1);
     }
   }
-
-  .home {
-    opacity: 0.6 !important;
-
-    &::after {
-      transform: scale(1);
-    }
-  }
 }
