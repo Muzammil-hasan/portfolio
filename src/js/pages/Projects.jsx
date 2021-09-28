@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
+import locomotiveScroll from "locomotive-scroll";
 
-const Projects = ({ dot, mouseOverEvent, mouseOutEvent }) => {
+const Projects = ({ mouseOverEvent, mouseOutEvent }) => {
+  const scrollRef = React.createRef();
   const projects = [
     {
       id: 1,
@@ -29,9 +31,21 @@ const Projects = ({ dot, mouseOverEvent, mouseOutEvent }) => {
     },
   ];
 
+  useEffect(() => {
+    const scroll = new locomotiveScroll({
+      el: scrollRef.current,
+      smooth: true,
+    });
+  });
+
   return (
-    <section className='projects'>
-      <div className='projects__content'>
+    <section className='projects' ref={scrollRef}>
+      <div
+        className='projects__content'
+        data-scroll
+        data-scroll-speed='1'
+        data-scroll-position='top'
+      >
         <p>our work</p>
         <h1 className='projects__content-title'>
           Explore some of my recent projects.
@@ -43,6 +57,9 @@ const Projects = ({ dot, mouseOverEvent, mouseOutEvent }) => {
           const { imageMain, id, name, siteLink } = project;
           return (
             <li
+              data-scroll
+              data-scroll-speed='3'
+              data-scroll-position='top'
               key={id}
               className={`projects__container__item ${name
                 .toLowerCase()

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 
 const Cursor = ({ dot }) => {
   return <div ref={dot} className='cursor-dot'></div>;

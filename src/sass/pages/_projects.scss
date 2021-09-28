@@ -1,5 +1,4 @@
 .projects {
-  // background-color: color(background);
   height: auto;
 
   &__content {
@@ -71,6 +70,11 @@
       flex-direction: column;
       width: 50%;
       margin-bottom: 13vh;
+
+      &:nth-last-child(1),
+      &:nth-last-child(2) {
+        margin-bottom: 0;
+      }
 
       &-image {
         @extend .img-background;

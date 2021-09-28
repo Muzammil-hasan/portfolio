@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import { Switch, Route, HashRouter as Router } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 
 /*--------------------------------------------------------------
 # Pages
