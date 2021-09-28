@@ -35,6 +35,7 @@ const Projects = ({ mouseOverEvent, mouseOutEvent }) => {
     const scroll = new locomotiveScroll({
       el: scrollRef.current,
       smooth: true,
+      multiplier: 0.8,
     });
   });
 

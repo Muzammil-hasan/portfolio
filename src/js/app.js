@@ -46,17 +46,19 @@ function App() {
 
   const toggleCursorVisibility = () => {
     if (cursorVisible.current) {
-      dot.current.style.opacity = 1;
+      dot.current.style.visibility = "visible";
     } else {
-      dot.current.style.opacity = 0;
+      dot.current.style.visibility = "hidden";
     }
   };
 
   const toggleCursorSize = () => {
     if (cursorEnlarged.current) {
-      dot.current.style.transform = "translate(-50%, -50%) scale(4)";
+      dot.current.style.transform = "translate(-50%, -50%) scale(3.5)";
+      dot.current.style.opacity = 0.5;
     } else {
       dot.current.style.transform = "translate(-50%, -50%) scale(1)";
+      dot.current.style.opacity = 1;
     }
   };
 
@@ -93,6 +95,7 @@ function App() {
 
   return (
     <>
+      <Cursor active={active} dot={dot} />
       <Header
         dot={dot}
         active={active}
@@ -100,7 +103,6 @@ function App() {
         mouseOverEvent={mouseOverEvent}
         mouseOutEvent={mouseOutEvent}
       />
-      <Cursor active={active} dot={dot} />
       <AnimatePresence exitBeforeEnter>
         <ScrollToTop>
           <Switch>

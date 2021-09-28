@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { NavLink as Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const Header = ({ active, setActive, mouseOverEvent, mouseOutEvent }) => {
@@ -16,11 +16,7 @@ const Header = ({ active, setActive, mouseOverEvent, mouseOutEvent }) => {
           onMouseOver={mouseOverEvent}
           onMouseOut={mouseOutEvent}
         >
-          <svg
-            viewBox='0 0 384 122'
-            fill='none'
-            xmlns='http://www.w3.org/2000/svg'
-          >
+          <svg viewBox='0 0 384 122' fill='none'>
             <g className='alphabet-m'>
               <path
                 d='M76.7 41.9C83.3667 41.9 88.6667 43.9 92.6 47.9C96.6 51.9 98.6 57.9333 98.6 66V97H79.6V69.1C79.6 65.3 78.8667 62.5 77.4 60.7C76 58.9 74 58 71.4 58C68.5333 58 66.2333 59 64.5 61C62.7667 63 61.9 66.0333 61.9 70.1V97H42.9V69.1C42.9 61.7 40.1667 58 34.7 58C31.7667 58 29.4333 59 27.7 61C25.9667 63 25.1 66.0333 25.1 70.1V97H6.1V42.8H24.2V48.5C26.2 46.3 28.5667 44.6667 31.3 43.6C34.1 42.4667 37.1333 41.9 40.4 41.9C44.2 41.9 47.6 42.6 50.6 44C53.6 45.4 56.0333 47.5333 57.9 50.4C60.0333 47.6667 62.7333 45.5667 66 44.1C69.2667 42.6333 72.8333 41.9 76.7 41.9Z'
@@ -112,7 +108,7 @@ const Header = ({ active, setActive, mouseOverEvent, mouseOutEvent }) => {
             onMouseOut={mouseOutEvent}
             onClick={() => setActive(!active)}
           >
-            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'>
+            <svg viewBox='0 0 200 200'>
               <g strokeWidth='2'>
                 <path
                   d='M72 82.286h28.75'
@@ -171,9 +167,11 @@ const Header = ({ active, setActive, mouseOverEvent, mouseOutEvent }) => {
               return (
                 <li key={page} className='header__nav__list-item'>
                   <Link
+                    exact
                     onClick={() => setActive(!active)}
                     onMouseOver={mouseOverEvent}
                     onMouseOut={mouseOutEvent}
+                    activeStyle={{ opacity: 0.6 }}
                     to={`/${page !== "home" ? page : ""}`}
                   >
                     {page}
@@ -181,6 +179,19 @@ const Header = ({ active, setActive, mouseOverEvent, mouseOutEvent }) => {
                 </li>
               );
             })}
+
+            <li className='header__nav__list-item --social'>
+              <a
+                href='3'
+                target='_blank'
+                rel='noopener noreferrer'
+                onClick={() => setActive(!active)}
+                onMouseOver={mouseOverEvent}
+                onMouseOut={mouseOutEvent}
+              >
+                say hi on instagram
+              </a>
+            </li>
           </ul>
         </motion.nav>
       </header>

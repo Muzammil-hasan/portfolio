@@ -6,26 +6,40 @@
 
   &__background {
     position: absolute;
-    width: 45rem;
+    width: 46rem;
     height: 40rem;
-    left: 46%;
-    top: 13vh;
-    // border-radius: 100%;
+    left: 46.5%;
+    top: 11vh;
     background-color: color(background-lighter);
   }
 
+  &__image {
+    @extend .img-background;
+    width: 20rem;
+    height: 26rem;
+    position: absolute;
+    left: 45%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
   &__content {
-    @extend .flex-center;
+    @extend .flex-between;
+    padding: 0 10vw;
+    position: relative;
 
     &-image {
       @extend .img-background;
       width: 20rem;
       height: 26rem;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
     }
 
     &-description {
-      padding: 0 3rem 0 2rem;
-      width: 25%;
+      width: 22vw;
       z-index: 2;
 
       > * {
@@ -52,12 +66,12 @@
       }
 
       &.--primary {
-        width: 33%;
+        width: 32vw;
         @extend .flex-center;
         flex-direction: column;
         align-items: flex-start;
         height: 100%;
-        padding: 0 5rem 0 3rem;
+        padding-right: 7rem;
 
         p {
           text-align: left;
@@ -69,52 +83,53 @@
 
   @include device(mobileAndTablet) {
     & {
-      position: relative;
-      padding: 20vh $page-padding 0;
-      height: auto;
+      display: none;
+      //     position: relative;
+      //     padding: 20vh 0 0;
+      //     height: auto;
 
-      &__background {
-        width: (100vw - $page-padding * 2);
-        height: 42rem;
-        left: $page-padding;
-        top: 19.5rem;
-      }
+      //     &__background {
+      //       width: (100vw - $page-padding * 2);
+      //       height: 42rem;
+      //       left: $page-padding;
+      //       top: 26vh;
+      //     }
 
-      &__content {
-        position: relative;
-        display: block;
-        padding: 0 3rem;
+      //     &__image {
+      //       left: ($page-padding * 3);
+      //       top: 14vh;
+      //       transform: none;
 
-        &-image {
-          @extend .img-background;
-          width: 20rem;
-          height: 26rem;
-        }
+      //     }
 
-        &-description {
-          width: 100%;
-          padding: 0;
+      //     &__content {
+      //       position: relative;
+      //       padding: 31vh ($page-padding * 3) 0;
 
-          p {
-            text-align: left;
-            @include font-size(h4);
-            padding: 3.7rem 0;
-          }
+      //       &-description {
+      //         width: 100%;
+      //         padding: 0;
 
-          > a {
-            @include font-size(h3);
+      //         p {
+      //           text-align: left;
+      //           @include font-size(h4);
+      //           padding: 3.7rem 0;
+      //         }
 
-            &::after {
-              top: 4rem;
-            }
-          }
+      //         > a {
+      //           @include font-size(h3);
 
-          &.--primary {
-            width: 100%;
-            padding: 5rem 0;
-          }
-        }
-      }
+      //           &::after {
+      //             top: 4rem;
+      //           }
+      //         }
+
+      //         &.--primary {
+      //           width: 100%;
+      //           padding: 7rem 0;
+      //         }
+      //       }
+      //     }
     }
   }
 }

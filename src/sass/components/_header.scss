@@ -110,7 +110,7 @@
     right: 0;
     top: 0;
     bottom: 0;
-    background-color: color(background-lighter);
+    background-color: color(accent);
     pointer-events: none;
     user-select: none;
     z-index: 8;
@@ -155,6 +155,7 @@
             letter-spacing: 0.1rem;
             padding-top: 3rem;
             word-spacing: -0.1rem;
+            text-transform: lowercase;
 
             &::after {
               display: none;

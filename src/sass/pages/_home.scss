@@ -44,9 +44,10 @@
 
     svg {
       width: 35vw;
+      opacity: 0.3;
 
       line {
-        stroke: color(accent);
+        stroke: color(main);
       }
     }
 
