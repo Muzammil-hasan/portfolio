@@ -55,7 +55,7 @@ function App() {
   const toggleCursorSize = () => {
     if (cursorEnlarged.current) {
       dot.current.style.transform = "translate(-50%, -50%) scale(3.5)";
-      dot.current.style.opacity = 0.5;
+      dot.current.style.opacity = 0.2;
     } else {
       dot.current.style.transform = "translate(-50%, -50%) scale(1)";
       dot.current.style.opacity = 1;

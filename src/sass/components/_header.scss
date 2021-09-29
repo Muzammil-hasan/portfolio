@@ -137,9 +137,9 @@
         }
 
         a {
+          @include font-size(h1);
           @extend .cta-secondary;
           color: color(main);
-          font-size: 3rem;
           text-align: center;
           display: block;
           position: relative;
@@ -170,7 +170,22 @@
     & {
       &__nav {
         width: 100vw;
+
+        &__list {
+          &-item {
+            a {
+              font-size: 4rem;
+            }
+
+            &.--social {
+              a {
+                @include font-size(h5);
+              }
+            }
+          }
+        }
       }
+
       &__logo {
         left: $mobile-page-padding;
         width: 7rem;

@@ -59,16 +59,19 @@
   @include device(mobileAndTablet) {
     & {
       &__content {
+        width: 100%;
+
         &-title {
-          font-size: 5.5rem;
+          font-size: 5rem;
         }
       }
 
       &__stroke {
         top: 13rem;
+        opacity: 1;
 
         svg {
-          width: 50vw;
+          width: 75vw;
         }
 
         &.second {

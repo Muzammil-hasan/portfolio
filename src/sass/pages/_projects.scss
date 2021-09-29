@@ -156,6 +156,13 @@
 
         &__item {
           width: 100%;
+          margin-bottom: 13vh;
+
+          &:nth-last-child(1),
+          &:nth-last-child(2) {
+            margin: auto;
+            margin-bottom: 13vh;
+          }
 
           &-image {
             width: 30rem;
