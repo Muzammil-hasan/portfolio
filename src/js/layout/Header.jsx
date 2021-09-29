@@ -182,7 +182,7 @@ const Header = ({ active, setActive, mouseOverEvent, mouseOutEvent }) => {
 
             <li className='header__nav__list-item --social'>
               <a
-                href='3'
+                href='https://www.instagram.com/muzammil______syed/'
                 target='_blank'
                 rel='noopener noreferrer'
                 onClick={() => setActive(!active)}

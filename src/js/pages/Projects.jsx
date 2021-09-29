@@ -8,7 +8,7 @@ const Projects = ({ mouseOverEvent, mouseOutEvent }) => {
     {
       id: 1,
       name: "Blu South",
-      imageMain: "../../../dist/images/blusouth/blusouth-left.jpg",
+      imageMain: "../../../dist/images/blusouth/blusouth-main.jpg",
       siteLink: "https://www.blusouthtownhomes.com/",
     },
     {
@@ -19,15 +19,15 @@ const Projects = ({ mouseOverEvent, mouseOutEvent }) => {
     },
     {
       id: 3,
-      name: "Loop studio",
-      imageMain: "../../../dist/images/springfield/springfield-right.jpg",
-      siteLink: "https://muzam.ml/",
+      name: "Stonesfair",
+      imageMain: "../../../dist/images/stonesfair/main.jpg",
+      siteLink: "https://stonesfairmgmt.com/",
     },
     {
       id: 4,
-      name: "holland village",
-      imageMain: "../../../dist/images/blusouth/blusouth-main.jpg",
-      siteLink: "https://muzam.ml/",
+      name: "Holland Village",
+      imageMain: "../../../dist/images/hollandvillage/holland-village-main.jpg",
+      siteLink: "https://hollandvillage.net/",
     },
   ];
 

@@ -24,7 +24,7 @@ const About = ({ mouseOverEvent, mouseOutEvent }) => {
           <a
             onMouseOver={mouseOverEvent}
             onMouseOut={mouseOutEvent}
-            href='https://muzam.ml/'
+            href='mailto:muzammilsyed270300@gmail.com'
             target='_blank'
           >
             Muzammil Hasan
