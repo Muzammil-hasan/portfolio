@@ -1,100 +1,59 @@
-.header__overlay__nav {
-  position: absolute;
-  pointer-events: all;
-  left: 5%;
+.header {
+  &__overlay {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: color(accent);
+    pointer-events: none;
+    user-select: none;
+    z-index: 8;
+  }
 
-  &-list {
-    @extend .inline-list;
+  &__nav {
+    position: fixed;
+    @extend .flex-center;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 40vw;
+    height: 100vh;
+    background-color: color(background);
+    z-index: 9;
+    transform: translateX(100%);
 
-    &-item {
-      .line {
-        position: relative;
-        overflow: hidden;
-        line-height: 6.8rem;
-        padding: 1.2rem 0;
-      }
+    &__list {
+      @extend .inline-list;
 
-      a {
-        @extend .flex-between;
-        position: relative;
-        transition: transform 0.8s cubic-bezier(0.36, 0.14, 0, 1);
-
-        > div {
-          position: relative;
-          color: color(background);
-          font-family: font(heading);
-          transform: translateY(200%);
-          display: block;
-          word-spacing: -0.5rem;
-          font-size: 6rem;
-          text-transform: capitalize;
-          margin-left: 3rem;
-          transition: letter-spacing 0.8s cubic-bezier(0.36, 0.14, 0, 1);
-
-          > span {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 105%;
-            height: 100%;
-            background-color: color(main);
-            opacity: 0.7;
-            clip-path: inset(0% 0% 0% 100%);
-            transform-origin: right;
-            transition: clip-path 0.8s cubic-bezier(0.36, 0.14, 0, 1);
-          }
+      &-item {
+        &:not(:last-child) {
+          margin-bottom: 1rem;
         }
 
-        svg {
-          color: color(background);
-          width: 4rem;
-          margin-right: 3rem;
-          transition: transform 0.6s cubic-bezier(0.36, 0.14, 0, 1);
-        }
-
-        &:hover {
-          > div {
-            letter-spacing: 0.5rem;
-          }
-
-          svg {
-            transform: translateX(3rem);
-          }
-        }
-      }
-
-      .count {
-        position: absolute;
-        font-family: font(secondary);
-        @include font-size(h5);
-        top: -1rem;
-        color: color(background);
-      }
-
-      .stroke {
-        height: 1px;
-        width: 88vw;
-        background-color: color(background);
-        transform-origin: left;
-      }
-    }
-
-    &:hover {
-      li {
         a {
-          > div {
-            > span {
-              clip-path: inset(0 0 0 0%);
-            }
-          }
+          @include font-size(h1);
+          @extend .cta-secondary;
+          color: color(main);
+          text-align: center;
+          display: block;
+          position: relative;
+          text-transform: capitalize;
         }
 
-        &:hover {
+        &.--social {
           a {
-            > div {
-              > span {
-                clip-path: inset(0 0 0 100%);
-              }
+            @include font-size(small);
+            font-family: font(secondary);
+            font-style: italic;
+            font-weight: 200;
+            letter-spacing: 0.1rem;
+            padding-top: 3rem;
+            word-spacing: -0.1rem;
+            text-transform: lowercase;
+
+            &::after {
+              display: none;
             }
           }
         }
@@ -104,16 +63,19 @@
 
   @include device(mobileAndTablet) {
     & {
-      left: 7%;
-      top: 25%;
+      &__nav {
+        width: 100vw;
 
-      ul {
-        li {
-          line-height: 5.5rem;
+        &__list {
+          &-item {
+            a {
+              font-size: 4rem;
+            }
 
-          a {
-            > div {
-              font-size: 5rem;
+            &.--social {
+              a {
+                @include font-size(h5);
+              }
             }
           }
         }

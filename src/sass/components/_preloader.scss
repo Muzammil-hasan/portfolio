@@ -1,19 +1,11 @@
 .preloader {
-	@extend .flex-center;
-	height: 100%;
-	width: 100%;
-	z-index: 2;
-	position: absolute;
-	left: 0;
-	top: 0;
-	user-select: none;
-	pointer-events: none;
-	overflow: hidden;
-
-	&__right,
-	&__left {
-		width: 50%;
-		height: 100vh;
-		background-color: color(main);
-	}
+  background-color: color(main);
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
 }

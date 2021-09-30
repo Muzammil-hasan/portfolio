@@ -1,6 +1,6 @@
 .home {
   padding: 0 $page-padding;
-  // background-color: color(background);
+  background-color: color(background);
   @extend .flex-center;
   flex-direction: column;
   width: 100%;
@@ -12,6 +12,28 @@
     text-align: center;
     width: 70%;
     margin: 0 auto;
+    position: relative;
+
+    &-stroke {
+      position: absolute;
+      top: -3.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+
+      svg {
+        width: 35vw;
+        opacity: 0.3;
+
+        line {
+          stroke: color(main);
+        }
+      }
+
+      &.second {
+        top: auto;
+        bottom: -3.5rem;
+      }
+    }
 
     &-title {
       font-size: 8rem;
@@ -35,24 +57,6 @@
         font-weight: 200;
         display: block;
       }
-    }
-  }
-
-  &__stroke {
-    position: absolute;
-    top: 6rem;
-
-    svg {
-      width: 35vw;
-      opacity: 0.3;
-
-      line {
-        stroke: color(main);
-      }
-    }
-
-    &.second {
-      top: 85vh;
     }
   }
 

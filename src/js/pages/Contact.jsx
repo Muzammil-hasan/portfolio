@@ -1,10 +1,14 @@
 import React from "react";
+import Preloader from "../layout/Preloader";
 
 const Contact = ({ dot }) => {
   return (
-    <section className='contact'>
-      <h1>muzam</h1>
-    </section>
+    <>
+      <Preloader />
+      <section className='contact'>
+        <h1>muzam</h1>
+      </section>
+    </>
   );
 };
 

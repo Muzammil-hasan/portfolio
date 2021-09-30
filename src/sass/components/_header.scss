@@ -104,88 +104,8 @@
     }
   }
 
-  &__overlay {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background-color: color(accent);
-    pointer-events: none;
-    user-select: none;
-    z-index: 8;
-  }
-
-  &__nav {
-    position: fixed;
-    @extend .flex-center;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 40vw;
-    height: 100vh;
-    background-color: color(background);
-    z-index: 9;
-    transform: translateX(100%);
-
-    &__list {
-      @extend .inline-list;
-
-      &-item {
-        &:not(:last-child) {
-          margin-bottom: 1rem;
-        }
-
-        a {
-          @include font-size(h1);
-          @extend .cta-secondary;
-          color: color(main);
-          text-align: center;
-          display: block;
-          position: relative;
-          text-transform: capitalize;
-        }
-
-        &.--social {
-          a {
-            @include font-size(small);
-            font-family: font(secondary);
-            font-style: italic;
-            font-weight: 200;
-            letter-spacing: 0.1rem;
-            padding-top: 3rem;
-            word-spacing: -0.1rem;
-            text-transform: lowercase;
-
-            &::after {
-              display: none;
-            }
-          }
-        }
-      }
-    }
-  }
-
   @include device(mobileAndTablet) {
     & {
-      &__nav {
-        width: 100vw;
-
-        &__list {
-          &-item {
-            a {
-              font-size: 4rem;
-            }
-
-            &.--social {
-              a {
-                @include font-size(h5);
-              }
-            }
-          }
-        }
-      }
-
       &__logo {
         left: $mobile-page-padding;
         width: 7rem;

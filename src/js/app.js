@@ -2,7 +2,6 @@ import React, { useRef, useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import { Switch, Route, HashRouter as Router } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 
 /*--------------------------------------------------------------
 # Pages
@@ -11,7 +10,6 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Projects from "./pages/Projects";
-import Project from "./pages/Project";
 
 /*--------------------------------------------------------------
 # Components
@@ -21,6 +19,12 @@ import Header from "./layout/Header";
 import Cursor from "./components/Cursor";
 
 function App() {
+  const routes = [
+    { name: "home", path: "/", Component: Home },
+    { name: "about", path: "/about", Component: About },
+    { name: "projects", path: "/projects", Component: Projects },
+    { name: "contact", path: "/contact", Component: Contact },
+  ];
   const dot = useRef(null);
   const [active, setActive] = useState(false);
 
@@ -93,6 +97,25 @@ function App() {
     dot.current.style.left = endX.current + "px";
   };
 
+  const content = {
+    initial: { opacity: 0 },
+    animate: {
+      opacity: 1,
+      transition: {
+        ease: "easeInOut",
+        duration: 0.7,
+        delay: 1.5,
+      },
+    },
+    exit: {
+      opacity: 0,
+      transition: {
+        ease: "easeInOut",
+        duration: 0.7,
+      },
+    },
+  };
+
   return (
     <>
       <Cursor active={active} dot={dot} />
@@ -103,36 +126,22 @@ function App() {
         mouseOverEvent={mouseOverEvent}
         mouseOutEvent={mouseOutEvent}
       />
-      <AnimatePresence exitBeforeEnter>
+
+      <AnimatePresence initial='false' exitBeforeEnter>
         <ScrollToTop>
           <Switch>
-            <Route exact path='/'>
-              <Home />
-            </Route>
-            <Route exact path='/about'>
-              <About
-                dot={dot}
-                mouseOverEvent={mouseOverEvent}
-                mouseOutEvent={mouseOutEvent}
-              />
-            </Route>
-            <Route exact path='/contact'>
-              <Contact
-                dot={dot}
-                mouseOverEvent={mouseOverEvent}
-                mouseOutEvent={mouseOutEvent}
-              />
-            </Route>
-            <Route exact path='/projects'>
-              <Projects
-                dot={dot}
-                mouseOverEvent={mouseOverEvent}
-                mouseOutEvent={mouseOutEvent}
-              />
-            </Route>
-            <Route exact path='/projects/:id'>
-              <Project />
-            </Route>
+            {routes.map(({ path, Component, name }) => {
+              return (
+                <Route key={name} path={path} exact>
+                  <Component
+                    dot={dot}
+                    mouseOverEvent={mouseOverEvent}
+                    mouseOutEvent={mouseOutEvent}
+                    content={content}
+                  />
+                </Route>
+              );
+            })}
           </Switch>
         </ScrollToTop>
       </AnimatePresence>
