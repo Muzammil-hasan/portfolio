@@ -1,33 +1,27 @@
 [
   {
     "id": "1",
-    "name": "Spring Field",
-    "imageMain": "springField.jpg",
-    "imageDesktop": "springFieldDesktop.jpg",
-    "imageMobile": "springFieldMobile.jpg",
-    "role": "web design & front-end",
-    "description": "This small one page website pack a big punch to challenge me. This Landing page was perfect to test my layout skills and I enjoyed it. This small one page website pack a big punch to challenge me. This Landing page was perfect to test my layout skills and I enjoyed it.This small one page website pack a big punch to challenge me.",
-    "next": "insure"
+    "name": "Blu South",
+    "imageMain": "../../../dist/images/blusouth/blusouth-main.jpg",
+    "siteLink": "https://www.blusouthtownhomes.com/"
   },
 
   {
     "id": "2",
-    "name": "Insure",
-    "imageMain": "insure.jpg",
-    "imageDesktop": "insureDesktop.jpg",
-    "imageMobile": "insureMobile.jpg",
-    "role": "web design & front-end",
-    "description": "This small one page website pack a big punch to challenge me. This Landing page was perfect to test my layout skills and I enjoyed it. This small one page website pack a big punch to challenge me. This Landing page was perfect to test my layout skills and I enjoyed it.This small one page website pack a big punch to challenge me.",
-    "next": "Holland Village"
+    "name": "Spring Field",
+    "imageMain": "../../../dist/images/springfield/springfield-left.jpg",
+    "siteLink": "https://www.springfieldal.com/"
   },
   {
     "id": "3",
+    "name": "Stonesfair",
+    "imageMain": "../../../dist/images/stonesfair/main.jpg",
+    "siteLink": "https://stonesfairmgmt.com/"
+  },
+  {
+    "id": "4",
     "name": "Holland Village",
-    "imageMain": "hollandVillage.jpg",
-    "imageDesktop": "hollandVillageDesktop.jpg",
-    "imageMobile": "hollandVillageMobile.jpg",
-    "role": "web design & front-end",
-    "description": "This small one page website pack a big punch to challenge me. This Landing page was perfect to test my layout skills and I enjoyed it. This small one page website pack a big punch to challenge me. This Landing page was perfect to test my layout skills and I enjoyed it.This small one page website pack a big punch to challenge me.",
-    "next": "Spring Field"
+    "imageMain": "../../../dist/images/hollandvillage/holland-village-main.jpg",
+    "siteLink": "https://hollandvillage.net/"
   }
 ]

@@ -17,6 +17,7 @@ import Projects from "./pages/Projects";
 import ScrollToTop from "./components/ScrollToTop";
 import Header from "./layout/Header";
 import Cursor from "./components/Cursor";
+import Noise from "./components/Noise";
 
 function App() {
   const routes = [
@@ -118,6 +119,7 @@ function App() {
 
   return (
     <>
+      <Noise />
       <Cursor active={active} dot={dot} />
       <Header
         dot={dot}
