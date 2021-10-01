@@ -118,7 +118,7 @@ function App() {
   };
 
   return (
-    <AnimatePresence initial='false' exitBeforeEnter>
+    <>
       <Noise />
       <Cursor active={active} dot={dot} />
       <Header
@@ -128,23 +128,25 @@ function App() {
         mouseOverEvent={mouseOverEvent}
         mouseOutEvent={mouseOutEvent}
       />
-      <ScrollToTop>
-        <Switch>
-          {routes.map(({ path, Component, name }) => {
-            return (
-              <Route key={name} path={path} exact>
-                <Component
-                  dot={dot}
-                  mouseOverEvent={mouseOverEvent}
-                  mouseOutEvent={mouseOutEvent}
-                  content={content}
-                />
-              </Route>
-            );
-          })}
-        </Switch>
-      </ScrollToTop>
-    </AnimatePresence>
+      <AnimatePresence initial='false' exitBeforeEnter>
+        <ScrollToTop>
+          <Switch>
+            {routes.map(({ path, Component, name }) => {
+              return (
+                <Route key={name} path={path} exact>
+                  <Component
+                    dot={dot}
+                    mouseOverEvent={mouseOverEvent}
+                    mouseOutEvent={mouseOutEvent}
+                    content={content}
+                  />
+                </Route>
+              );
+            })}
+          </Switch>
+        </ScrollToTop>
+      </AnimatePresence>
+    </>
   );
 }
 

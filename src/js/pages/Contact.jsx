@@ -74,7 +74,7 @@ const Contact = ({ mouseOverEvent, mouseOutEvent, content }) => {
           <div>
             {personalDetails.map(({ title, details, id, links }) => {
               return (
-                <div key={title} className='contact__personal-container'>
+                <div key={id} className='contact__personal-container'>
                   <h3 className='contact__personal-container-title'>{title}</h3>
                   {details !== undefined && <p>{details}</p>}
                   {links !== undefined &&
