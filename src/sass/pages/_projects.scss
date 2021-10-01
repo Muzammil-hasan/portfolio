@@ -44,11 +44,10 @@
     &::before {
       content: "";
       position: absolute;
-      background-color: color(main);
+      background-color: color(main-lighter);
       width: 0.01rem;
       height: 14rem;
       left: 50%;
-      opacity: 0.3;
     }
 
     &::before {

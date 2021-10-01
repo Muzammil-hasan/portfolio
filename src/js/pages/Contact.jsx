@@ -1,110 +1,137 @@
-import React from "react";
+import React, { useState } from "react";
 import Preloader from "../layout/Preloader";
+import { motion } from "framer-motion";
 import { Formik } from "formik";
 
-const Contact = ({ dot }) => {
-  const FORMSPARK_ACTION_URL = "https://submit-form.com/32rKDtQ8";
+const Contact = ({ mouseOverEvent, mouseOutEvent, content }) => {
+  // const FORMSPARK_ACTION_URL = "https://submit-form.com/32rKDtQ8";
+
+  const personalDetails = [
+    {
+      id: 1,
+      title: "live nearby?",
+      details: "726, phatak dhobiyan, farash khana, Delhi - 110006",
+    },
+    {
+      id: 2,
+      title: "Contact with us",
+      links: [
+        {
+          linkName: "muzammilsyed270300@gmailcom",
+          url: "https://muzam.ml",
+        },
+
+        {
+          linkName: "+91 9717931398",
+          url: "https://muzam.ml",
+        },
+      ],
+    },
+    {
+      id: 3,
+      title: "Social",
+      links: [
+        {
+          linkName: "Linkedin",
+          url: "https://muzam.ml",
+        },
+
+        {
+          linkName: "Instagram",
+          url: "https://muzam.ml",
+        },
+        {
+          linkName: "Twitter",
+          url: "https://muzam.ml",
+        },
+      ],
+    },
+  ];
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
 
   return (
     <>
-      {/* <Preloader /> */}
+      <Preloader />
       <section className='contact'>
-        <Formik
-          initialValues={{ name: "", email: "", message: "" }}
-          validate={(values) => {
-            const errors = {};
-            if (!values.email) {
-              errors.email = "Email is required";
-            } else if (
-              !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-            ) {
-              errors.email = "Invalid email address";
-            }
+        <motion.div
+          variants={content}
+          initial='initial'
+          animate='animate'
+          exit='exit'
+          className='contact__divider'
+        ></motion.div>
 
-            if (!values.name) {
-              errors.name = "Name is required";
-            }
-
-            if (!values.message) {
-              errors.message = "Message is required";
-            }
-
-            return errors;
-          }}
-          onSubmit={async (values, { setSubmitting }) => {
-            let request = await fetch(FORMSPARK_ACTION_URL, {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json",
-              },
-              body: JSON.stringify(values),
-            });
-
-            if (request.ok) {
-              await setSubmitting(false);
-              values.name = "";
-              values.email = "";
-              values.message = "";
-            }
-          }}
+        <motion.div
+          className='contact__form'
+          variants={content}
+          initial='initial'
+          animate='animate'
+          exit='exit'
         >
-          {({
-            values,
-            errors,
-            touched,
-            handleChange,
-            handleBlur,
-            handleSubmit,
-            isSubmitting,
-            /* and other goodies */
-          }) => (
-            <form onSubmit={handleSubmit}>
-              <input
-                type='text'
-                name='name'
-                placeholder='Name'
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.name}
-                aria-required='true'
-              />
-              <span className='contact__form-errors'>
-                {errors.name && touched.name && errors.name}
-              </span>
-              <input
-                type='email'
-                name='email'
-                placeholder='Email'
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.email}
-                aria-required='true'
-              />
-              <span className='contact__form-errors'>
-                {errors.email && touched.email && errors.email}
-              </span>
+          <h2 className='contact__form-title'>
+            Hello there - Let's get in touch
+          </h2>
+          <form>
+            <span>
+              <label htmlFor='name'>name</label>
+              <input type='text' name='name' />
+            </span>
 
-              <textarea
-                name='message'
-                id='message'
-                cols='30'
-                rows='10'
-                placeholder='Message'
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.message}
-                aria-required='true'
-              ></textarea>
-              <span className='contact__form-errors'>
-                {errors.message && touched.message && errors.message}
-              </span>
-              <button type='submit' disabled={isSubmitting}>
-                Submit
+            <span>
+              <label htmlFor='email'>email</label>
+              <input type='email' name='email' />
+            </span>
+
+            <span>
+              <label htmlFor='message'>message</label>
+              <textarea rows='1' name='message' />
+            </span>
+
+            <span className='submitWrapper'>
+              <button
+                type='submit'
+                onMouseOver={mouseOverEvent}
+                onMouseOut={mouseOutEvent}
+                onClick={handleSubmit}
+              >
+                Send message
               </button>
-            </form>
-          )}
-        </Formik>
+            </span>
+          </form>
+        </motion.div>
+
+        <motion.div
+          variants={content}
+          initial='initial'
+          animate='animate'
+          exit='exit'
+          className='contact__personal'
+        >
+          {personalDetails.map(({ title, details, id, links }) => {
+            return (
+              <div key={title} className='contact__personal-container'>
+                <h3 className='contact__personal-container-title'>{title}</h3>
+                {details !== undefined && <p>{details}</p>}
+                {links !== undefined &&
+                  links.map(({ linkName, url }) => {
+                    return (
+                      <a
+                        key={linkName}
+                        href={url}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                      >
+                        {linkName}
+                      </a>
+                    );
+                  })}
+              </div>
+            );
+          })}
+        </motion.div>
       </section>
     </>
   );

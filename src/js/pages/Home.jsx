@@ -6,7 +6,7 @@ const Home = ({ content }) => {
   return (
     <>
       <Preloader />
-      <motion.section className='home'>
+      <section className='home'>
         <motion.div
           className='home__content'
           variants={content}
@@ -53,7 +53,7 @@ const Home = ({ content }) => {
             </svg>
           </div>
         </motion.div>
-      </motion.section>
+      </section>
     </>
   );
 };
