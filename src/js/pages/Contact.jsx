@@ -1,29 +1,27 @@
-import React, { useState } from "react";
+import React from "react";
 import Preloader from "../layout/Preloader";
 import { motion } from "framer-motion";
-import { Formik } from "formik";
+import Form from "../components/Form";
 
 const Contact = ({ mouseOverEvent, mouseOutEvent, content }) => {
-  // const FORMSPARK_ACTION_URL = "https://submit-form.com/32rKDtQ8";
-
   const personalDetails = [
     {
       id: 1,
       title: "live nearby?",
-      details: "726, phatak dhobiyan, farash khana, Delhi - 110006",
+      details: "820, Velincia street san francisco california",
     },
     {
       id: 2,
-      title: "Contact with us",
+      title: "Contact me",
       links: [
         {
           linkName: "muzammilsyed270300@gmailcom",
-          url: "https://muzam.ml",
+          url: "mailto:muzammilsyed270300@gmail.com",
         },
 
         {
           linkName: "+91 9717931398",
-          url: "https://muzam.ml",
+          url: "tel:+919717931398",
         },
       ],
     },
@@ -33,29 +31,31 @@ const Contact = ({ mouseOverEvent, mouseOutEvent, content }) => {
       links: [
         {
           linkName: "Linkedin",
-          url: "https://muzam.ml",
+          url: "https://www.linkedin.com/in/muzammil-hasan-5279b61b8",
         },
 
         {
-          linkName: "Instagram",
-          url: "https://muzam.ml",
+          linkName: "Whatsapp",
+          url: "https://wa.me/+919717931398",
         },
         {
           linkName: "Twitter",
-          url: "https://muzam.ml",
+          url: "https://twitter.com/Muzammil___syed?s=09",
         },
       ],
     },
   ];
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
-
   return (
     <>
       <Preloader />
       <section className='contact'>
+        <Form
+          mouseOutEvent={mouseOutEvent}
+          mouseOverEvent={mouseOverEvent}
+          content={content}
+        />
+
         <motion.div
           variants={content}
           initial='initial'
@@ -65,72 +65,35 @@ const Contact = ({ mouseOverEvent, mouseOutEvent, content }) => {
         ></motion.div>
 
         <motion.div
-          className='contact__form'
-          variants={content}
-          initial='initial'
-          animate='animate'
-          exit='exit'
-        >
-          <h2 className='contact__form-title'>
-            Hello there - Let's get in touch
-          </h2>
-          <form>
-            <span>
-              <label htmlFor='name'>name</label>
-              <input type='text' name='name' />
-            </span>
-
-            <span>
-              <label htmlFor='email'>email</label>
-              <input type='email' name='email' />
-            </span>
-
-            <span>
-              <label htmlFor='message'>message</label>
-              <textarea rows='1' name='message' />
-            </span>
-
-            <span className='submitWrapper'>
-              <button
-                type='submit'
-                onMouseOver={mouseOverEvent}
-                onMouseOut={mouseOutEvent}
-                onClick={handleSubmit}
-              >
-                Send message
-              </button>
-            </span>
-          </form>
-        </motion.div>
-
-        <motion.div
           variants={content}
           initial='initial'
           animate='animate'
           exit='exit'
           className='contact__personal'
         >
-          {personalDetails.map(({ title, details, id, links }) => {
-            return (
-              <div key={title} className='contact__personal-container'>
-                <h3 className='contact__personal-container-title'>{title}</h3>
-                {details !== undefined && <p>{details}</p>}
-                {links !== undefined &&
-                  links.map(({ linkName, url }) => {
-                    return (
-                      <a
-                        key={linkName}
-                        href={url}
-                        target='_blank'
-                        rel='noopener noreferrer'
-                      >
-                        {linkName}
-                      </a>
-                    );
-                  })}
-              </div>
-            );
-          })}
+          <div>
+            {personalDetails.map(({ title, details, id, links }) => {
+              return (
+                <div key={title} className='contact__personal-container'>
+                  <h3 className='contact__personal-container-title'>{title}</h3>
+                  {details !== undefined && <p>{details}</p>}
+                  {links !== undefined &&
+                    links.map(({ linkName, url }) => {
+                      return (
+                        <a
+                          key={linkName}
+                          href={url}
+                          target='_blank'
+                          rel='noopener noreferrer'
+                        >
+                          {linkName}
+                        </a>
+                      );
+                    })}
+                </div>
+              );
+            })}
+          </div>
         </motion.div>
       </section>
     </>

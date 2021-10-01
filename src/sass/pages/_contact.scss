@@ -1,108 +1,21 @@
 .contact {
+  @extend .flex-between;
   background-color: color(background);
   height: 100vh;
-  @extend .flex-between;
-  padding: 0 ($page-padding * 5);
   position: relative;
 
   &__divider {
     position: absolute;
     background-color: color(main-lighter);
-    height: 28rem;
+    height: 26rem;
     width: 0.01rem;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
 
-  &__form {
-    width: 50%;
-
-    &-title {
-      font-family: font(text);
-      @include font-size(h5);
-      font-weight: 300;
-      color: color(main);
-      opacity: 0.75;
-      padding-bottom: 6rem;
-    }
-
-    form {
-      > span {
-        @extend .flex-start;
-        align-items: flex-start;
-        flex-direction: column;
-        position: relative;
-        width: 20rem;
-
-        &:not(:last-child) {
-          margin-bottom: 3rem;
-        }
-
-        &.submitWrapper {
-          align-items: flex-end;
-        }
-
-        label {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-45%);
-          transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
-          text-transform: capitalize;
-          @include font-size(p);
-          font-family: font(text);
-          color: color(main);
-        }
-
-        &:focus-within {
-          label {
-            left: 0;
-            opacity: 0.6;
-            transform: translateY(-160%);
-          }
-        }
-      }
-
-      input,
-      textarea,
-      button {
-        background: none;
-        outline: none;
-        border: none;
-        padding: 0.8rem 0;
-        width: 20rem;
-        resize: none;
-        border-bottom: 1px solid color(main);
-        @include font-size(h5);
-        font-family: font(text);
-        color: color(main);
-      }
-
-      button {
-        @include font-size(p);
-        @extend .cta-third;
-        opacity: 0.7;
-        text-align: center;
-        width: 7rem;
-        transition: opacity 0.2s ease-in-out;
-        cursor: none;
-        border: none;
-
-        &:hover {
-          opacity: 1;
-        }
-      }
-    }
-  }
-
   &__personal {
-    @extend .flex-between;
-    flex-direction: column;
-    align-items: flex-start;
-
     &-container {
-      width: 75%;
-
       &-title {
         font-family: font(text);
         opacity: 0.75;
@@ -122,6 +35,10 @@
         }
       }
 
+      p {
+        width: 75%;
+      }
+
       a,
       p {
         display: table;
@@ -136,5 +53,14 @@
         margin-bottom: 4rem;
       }
     }
+  }
+
+  &__form,
+  &__personal {
+    width: 50%;
+    height: 100%;
+    opacity: 0.5;
+    @extend .flex-center;
+    flex-direction: column;
   }
 }
