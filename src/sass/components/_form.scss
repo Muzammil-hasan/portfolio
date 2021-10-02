@@ -17,7 +17,7 @@
       width: 20rem;
 
       &:not(:last-child) {
-        margin-bottom: 3rem;
+        margin-bottom: 3.4rem;
       }
 
       &.submitWrapper {
@@ -30,14 +30,14 @@
         transform: translateY(-45%);
         transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
         text-transform: capitalize;
-        @include font-size(h6);
+        @include font-size(p);
         font-family: font(text);
         color: color(main);
 
         &.active {
           left: 0;
           opacity: 0.6;
-          transform: translateY(-160%);
+          transform: translate(-0.4rem, -160%) scale(0.9);
         }
       }
 
@@ -45,7 +45,7 @@
         label {
           left: 0;
           opacity: 0.6;
-          transform: translateY(-160%);
+          transform: translate(-0.4rem, -160%) scale(0.9);
         }
       }
     }
@@ -61,7 +61,7 @@
       background: none;
       outline: none;
       border: none;
-      padding: 0.8rem 0;
+      padding: 0.8rem 0 0.5rem;
       width: 20rem;
       resize: none;
       border-bottom: 1px solid color(main);
@@ -84,11 +84,50 @@
       }
     }
   }
-}
 
-.errorMessage {
-  @include font-size(small);
-  bottom: -1.8rem;
-  position: absolute;
-  color: #e55e5e;
+  &-errors {
+    @include font-size(small);
+    bottom: -1.8rem;
+    position: absolute;
+    color: #e55e5e;
+  }
+
+  @include device(mobileAndTablet) {
+    & {
+      &-title {
+        @include font-size(h3);
+      }
+
+      form {
+        > .inputWrapper {
+          @extend .flex-start;
+          align-items: flex-start;
+          flex-direction: column;
+          position: relative;
+          width: (100vw - $mobile-page-padding * 3);
+
+          &:not(:last-child) {
+            margin-bottom: 5rem;
+          }
+
+          label {
+            @include font-size(h4);
+          }
+        }
+
+        input,
+        textarea,
+        button {
+          @include font-size(h3);
+          padding: 1rem 0;
+          width: 100%;
+        }
+
+        button {
+          @include font-size(h4);
+          width: 10rem;
+        }
+      }
+    }
+  }
 }

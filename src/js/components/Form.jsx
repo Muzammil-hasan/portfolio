@@ -1,88 +1,141 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
-import { useForm } from "react-hook-form";
-import { ErrorMessage } from "@hookform/error-message";
+import { Formik } from "formik";
 
 const Form = ({ mouseOverEvent, mouseOutEvent, content }) => {
-  // const FORMSPARK_ACTION_URL = "https://submit-form.com/32rKDtQ8";
-  const [values, setValues] = useState("");
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-
-  const onSubmit = (data) => {
-    setValues("");
-    console.log(data.email);
-  };
+  const FORMSPARK_ACTION_URL = "https://submit-form.com/32rKDtQ8";
 
   return (
-    <motion.div
-      className='contact__form'
-      variants={content}
-      initial='initial'
-      animate='animate'
-      exit='exit'
-    >
-      <div>
+    <motion.div className='contact__form'>
+      <motion.div
+        variants={content}
+        initial='initial'
+        exit='exit'
+        animate='animate'
+      >
         <h2 className='contact__form-title'>
           Hello there - Let's get in touch
         </h2>
+        <Formik
+          initialValues={{ name: "", email: "", message: "" }}
+          validate={(values) => {
+            const errors = {};
+            if (!values.email) {
+              errors.email = "Email is required";
+            } else if (
+              !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+            ) {
+              errors.email = "Invalid email address";
+            }
 
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <div className='inputWrapper'>
-            <label htmlFor='name'>name</label>
-            <input
-              value={values}
-              {...register("name", { required: true })}
-              onChange={(e) => setValues(e.target.value)}
-            />
-            {errors.name && (
-              <span className='errorMessage'>*Your name required.</span>
-            )}
-          </div>
+            if (!values.name) {
+              errors.name = "Name is required";
+            }
 
-          <div className='inputWrapper'>
-            <label htmlFor='email'>email</label>
-            <input
-              {...register("email", {
-                required: "*Email required.",
-                pattern: {
-                  value:
-                    /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i,
-                  message: "*Your email is incorrect.",
-                },
-              })}
-            />
-            <p className='errorMessage'>
-              <ErrorMessage errors={errors} name='email'>
-                {({ messages }) =>
-                  messages &&
-                  Object.entries(messages).map(([type, message]) => (
-                    <p key={type}>{message}</p>
-                  ))
-                }
-              </ErrorMessage>
-            </p>
-          </div>
+            if (!values.message) {
+              errors.message = "Message is required";
+            }
 
-          <div className='inputWrapper'>
-            <label htmlFor='message'>message</label>
-            <textarea rows='1' {...register("message")} />
-          </div>
+            return errors;
+          }}
+          onSubmit={async (values, { setSubmitting }) => {
+            let request = await fetch(FORMSPARK_ACTION_URL, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+              },
+              body: JSON.stringify(values),
+            });
 
-          <div className='submitWrapper inputWrapper'>
-            <button
-              type='submit'
-              onMouseOver={mouseOverEvent}
-              onMouseOut={mouseOutEvent}
-            >
-              Send message
-            </button>
-          </div>
-        </form>
-      </div>
+            if (request.ok) {
+              await setSubmitting(false);
+              values.name = "";
+              values.email = "";
+              values.message = "";
+            }
+          }}
+        >
+          {({
+            values,
+            errors,
+            touched,
+            handleChange,
+            handleBlur,
+            handleSubmit,
+            isSubmitting,
+            /* and other goodies */
+          }) => (
+            <form onSubmit={handleSubmit}>
+              <div className='inputWrapper'>
+                <label className={values.name ? "active" : ""} htmlFor='name'>
+                  name
+                </label>
+                <input
+                  type='text'
+                  name='name'
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.name}
+                  aria-required='true'
+                />
+                <span className='contact__form-errors'>
+                  {errors.name && touched.name && errors.name}
+                </span>
+              </div>
+
+              <div className='inputWrapper'>
+                <label className={values.email ? "active" : ""} htmlFor='email'>
+                  email
+                </label>
+                <input
+                  type='email'
+                  name='email'
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.email}
+                  aria-required='true'
+                />
+                <span className='contact__form-errors'>
+                  {errors.email && touched.email && errors.email}
+                </span>
+              </div>
+
+              <div className='inputWrapper'>
+                <label
+                  className={values.message ? "active" : ""}
+                  htmlFor='message'
+                >
+                  Message
+                </label>
+                <textarea
+                  name='message'
+                  id='message'
+                  rows='1'
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.message}
+                  aria-required='true'
+                ></textarea>
+                <span className='contact__form-errors'>
+                  {errors.message && touched.message && errors.message}
+                </span>
+              </div>
+
+              <div className='submitWrapper inputWrapper'>
+                <button
+                  type='submit'
+                  disabled={isSubmitting}
+                  onMouseOut={mouseOutEvent}
+                  onMouseOver={mouseOverEvent}
+                >
+                  Send message
+                </button>
+              </div>
+            </form>
+          )}
+        </Formik>
+      </motion.div>
     </motion.div>
   );
 };

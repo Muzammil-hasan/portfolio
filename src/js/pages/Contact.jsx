@@ -85,6 +85,8 @@ const Contact = ({ mouseOverEvent, mouseOutEvent, content }) => {
                           href={url}
                           target='_blank'
                           rel='noopener noreferrer'
+                          onMouseOut={mouseOutEvent}
+                          onMouseOver={mouseOverEvent}
                         >
                           {linkName}
                         </a>

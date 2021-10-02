@@ -59,8 +59,48 @@
   &__personal {
     width: 50%;
     height: 100%;
-    opacity: 0.5;
     @extend .flex-center;
     flex-direction: column;
+  }
+
+  @include device(mobileAndTablet) {
+    & {
+      padding: 20vh $mobile-page-padding 5rem;
+      height: auto;
+      flex-direction: column;
+      flex-wrap: nowrap;
+
+      &__form,
+      &__personal {
+        width: 100%;
+        align-items: flex-start;
+        padding: 5rem 0;
+      }
+
+      &__personal {
+        &-container {
+          &-title {
+            @include font-size(h4);
+          }
+
+          a,
+          p {
+            @include font-size(h4);
+
+            &::after {
+              top: 3.1rem;
+            }
+
+            &:not(:last-child) {
+              padding-bottom: 1.2rem;
+            }
+          }
+        }
+      }
+
+      &__divider {
+        display: none;
+      }
+    }
   }
 }

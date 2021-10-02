@@ -32,13 +32,13 @@ const Projects = ({ mouseOverEvent, mouseOutEvent, content }) => {
     },
   ];
 
-  // useEffect(() => {
-  //   const scroll = new locomotiveScroll({
-  //     el: scrollRef.current,
-  //     smooth: true,
-  //     multiplier: 0.8,
-  //   });
-  // });
+  useEffect(() => {
+    const scroll = new locomotiveScroll({
+      el: scrollRef.current,
+      smooth: true,
+      multiplier: 0.8,
+    });
+  }, [scrollRef.current]);
 
   return (
     <>
@@ -50,9 +50,9 @@ const Projects = ({ mouseOverEvent, mouseOutEvent, content }) => {
           animate='animate'
           exit='exit'
           className='projects__content'
-          // data-scroll
-          // data-scroll-speed='1'
-          // data-scroll-position='top'
+          data-scroll
+          data-scroll-speed='1'
+          data-scroll-position='top'
         >
           <p>our work</p>
           <h1 className='projects__content-title'>
@@ -71,9 +71,9 @@ const Projects = ({ mouseOverEvent, mouseOutEvent, content }) => {
             const { imageMain, id, name, siteLink } = project;
             return (
               <li
-                // data-scroll
-                // data-scroll-speed='3'
-                // data-scroll-position='top'
+                data-scroll
+                data-scroll-speed='3'
+                data-scroll-position='top'
                 key={id}
                 className={`projects__container__item ${name
                   .toLowerCase()
