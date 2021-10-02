@@ -45,7 +45,7 @@
         label {
           left: 0;
           opacity: 0.6;
-          transform: translate(-0.4rem, -160%) scale(0.9);
+          transform: translate(-0.3rem, -160%) scale(0.9);
         }
       }
     }
@@ -86,10 +86,13 @@
   }
 
   &-errors {
-    @include font-size(small);
+    @include font-size(x-small);
     bottom: -1.8rem;
     position: absolute;
     color: #e55e5e;
+    font-family: font(secondary);
+    letter-spacing: 1px;
+    text-transform: lowercase;
   }
 
   @include device(mobileAndTablet) {

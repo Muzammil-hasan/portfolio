@@ -1,6 +1,7 @@
 .projects {
   background-color: color(background);
   height: auto;
+  min-height: 100vh;
 
   &__content {
     @extend .flex-center;
