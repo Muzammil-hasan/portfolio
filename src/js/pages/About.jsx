@@ -33,7 +33,8 @@ const About = ({ mouseOverEvent, mouseOutEvent, content }) => {
           </div>
 
           <div className='about__content-image'>
-            <img src='../../../dist/images/avatar.jpg' alt='' />
+            <img src='../../../dist/images/avatar.jpeg' alt='' />
+            <div className='about__content-image-mask'></div>
           </div>
 
           <div className='about__content-description --primary'>

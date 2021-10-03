@@ -83,8 +83,8 @@ const Projects = ({ mouseOverEvent, mouseOutEvent, content }) => {
                 <div className='projects__container__item-image'>
                   <a href={siteLink}>
                     <motion.img
-                      whileHover={{ scale: 1.15 }}
-                      transition={{ ease: "easeInOut", duration: 0.5 }}
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ ease: "easeInOut", duration: 1 }}
                       src={imageMain}
                       alt={name}
                       onMouseOver={mouseOverEvent}

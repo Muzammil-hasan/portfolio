@@ -32,6 +32,18 @@
       @extend .img-background;
       width: 20rem;
       height: 26rem;
+
+      &-mask {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: color(background-lighter);
+        opacity: 0.1;
+        user-select: none;
+        pointer-events: none;
+      }
     }
 
     &-description {
@@ -57,6 +69,11 @@
         line-height: 1.8;
         width: 74%;
         margin: 0 0 0 auto;
+
+        > span {
+          font-style: italic;
+          text-transform: capitalize;
+        }
       }
 
       &.--primary {
