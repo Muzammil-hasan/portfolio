@@ -19,6 +19,7 @@
       top: -3.5rem;
       left: 50%;
       transform: translateX(-50%);
+      will-change: transform;
 
       svg {
         width: 35vw;
@@ -67,18 +68,20 @@
         &-title {
           font-size: 5rem;
         }
-      }
 
-      &__stroke {
-        top: 13rem;
-        opacity: 1;
+        &-stroke {
+          opacity: 1;
+          will-change: top, bottom;
+          top: -5.5rem;
 
-        svg {
-          width: 75vw;
-        }
+          svg {
+            width: 57vw;
+          }
 
-        &.second {
-          top: 85vh;
+          &.second {
+            bottom: -5.5rem;
+            will-change: left, bottom;
+          }
         }
       }
     }

@@ -1,6 +1,12 @@
 .header {
   overflow-x: hidden !important;
   position: relative;
+  position: absolute;
+  height: $header-height;
+  background: transparent;
+  left: 0;
+  top: 0;
+  right: 0;
 
   &__logo {
     position: fixed;

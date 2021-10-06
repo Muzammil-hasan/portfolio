@@ -1,15 +1,14 @@
 import React from "react";
+import { NavLink as Link } from "react-router-dom";
 import Nav from "../components/Nav";
 
 const Header = ({ active, setActive, mouseOverEvent, mouseOutEvent }) => {
   return (
     <>
       <header className='header'>
-        <a
+        <Link
           className='header__logo'
-          href='https://muzam.ml/'
-          target='_blank'
-          rel='noopener noreferrer'
+          to='/'
           onMouseOver={mouseOverEvent}
           onMouseOut={mouseOutEvent}
         >
@@ -95,7 +94,7 @@ const Header = ({ active, setActive, mouseOverEvent, mouseOutEvent }) => {
               fill='currentColor'
             />
           </svg>
-        </a>
+        </Link>
         <div className='header__hamburger__container'>
           <button
             className={`header__hamburger__container-hamburger ${
