@@ -25,10 +25,10 @@ const About = ({ mouseOverEvent, mouseOutEvent, content }) => {
           <div className='about__content-background --mobile'></div>
           <div className='about__content-description'>
             <p>
-              I’m a hard working and dedicated professional front-end developer
-              with a keen eye for detail, and a determination to deliver the
-              very highest quality. I take great pride in my work, and I always
-              try to better myself with every project I work on.
+              I love being in a nature while I'm not coding you'll find me
+              outdoor whether it's for a walk, run or cycling and I love food in
+              all capacities. I spend my time exploring new restaurants, trying
+              new dishes, and talking about my next meal.
             </p>
           </div>
 
@@ -47,16 +47,19 @@ const About = ({ mouseOverEvent, mouseOutEvent, content }) => {
               Muzammil Hasan
             </a>
             <p>
-              I’m a hard working and dedicated professional front-end developer
-              with a keen eye for detail, and a determination to deliver the
-              very highest quality. I take great pride in my work, and I always
-              try to better myself with every project I work on.
+              I'm a 21 year old hard working and dedicated professional
+              front-end developer living in Delhi, India. As a freelance I work
+              with companies, agencies, start-ups and individuals to full fill
+              their ideas into reality. I take great pride in my work, and I
+              always try to better myself with every project I work on.
             </p>
             <p>
-              I’m a hard working and dedicated professional front-end developer
-              with a keen eye for detail, and a determination to deliver the
-              very highest quality. I take great pride in my work, and I always
-              try to better myself with every project I work on.
+              I like to write semantic, cross browser compatible code by hand
+              that is re-useable, maintainable and easy to understand. I am
+              motivated, enthusiastic and well organised. The main areas of my
+              expertise are HTML(5), CSS(3), JavaScript with React. I regularly
+              use version control system (GIT) to maintain my code, and I
+              specialise in responsive web.
             </p>
           </div>
         </motion.div>

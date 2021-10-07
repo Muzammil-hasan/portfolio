@@ -7,18 +7,18 @@ const Contact = ({ mouseOverEvent, mouseOutEvent, content }) => {
   const personalDetails = [
     {
       id: 1,
-      title: "live nearby?",
-      details: "820, Velincia street san francisco california",
-    },
-    {
-      id: 2,
-      title: "Contact me",
+      title: "Like mail?",
       links: [
         {
           linkName: "muzammilsyed270300@gmailcom",
           url: "mailto:muzammilsyed270300@gmail.com",
         },
-
+      ],
+    },
+    {
+      id: 2,
+      title: "Want to call?",
+      links: [
         {
           linkName: "+91 9717931398",
           url: "tel:+919717931398",
@@ -76,7 +76,6 @@ const Contact = ({ mouseOverEvent, mouseOutEvent, content }) => {
               return (
                 <div key={id} className='contact__personal-container'>
                   <h3 className='contact__personal-container-title'>{title}</h3>
-                  {details !== undefined && <p>{details}</p>}
                   {links !== undefined &&
                     links.map(({ linkName, url }) => {
                       return (
