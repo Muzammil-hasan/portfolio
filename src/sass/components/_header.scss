@@ -37,6 +37,14 @@
     color: var(--main);
     @include font-size(small);
     text-transform: uppercase;
+
+    @include device(mobileAndTablet) {
+      left: auto;
+      bottom: auto;
+      top: 2.9rem;
+      right: 17vw;
+      @include font-size(p);
+    }
   }
 
   &__hamburger__container {
