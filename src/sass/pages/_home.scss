@@ -1,6 +1,6 @@
 .home {
   padding: 0 $page-padding;
-  background-color: color(background);
+  background-color: var(--background);
   @extend .flex-center;
   flex-direction: column;
   width: 100%;
@@ -25,7 +25,8 @@
         width: 35vw;
 
         line {
-          stroke: color(main-lighter);
+          stroke: var(--main);
+          opacity: 0.3;
         }
       }
 
@@ -39,6 +40,7 @@
       font-size: 8rem;
       line-height: 1;
       padding: 11rem 0 0;
+      color: var(--main);
 
       span {
         font-style: italic;
@@ -52,6 +54,7 @@
       font-style: italic;
       font-weight: 400;
       padding: 2rem 0;
+      color: var(--main);
 
       span {
         font-weight: 200;

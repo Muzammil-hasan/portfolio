@@ -1,5 +1,18 @@
+.theme-light {
+  --main: #1a1a1a;
+  --background: #eaeaea;
+  --overlay: #8d8d8d;
+  --accent: #dbdbdb;
+}
+
+.theme-dark {
+  --main: #eaeaea;
+  --background: #181818;
+  --overlay: #1e1e1e;
+  --accent: #222222;
+}
+
 body {
-  color: color(main);
   font-family: font(text) !important;
   margin: 0;
   padding: 0;

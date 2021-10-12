@@ -1,5 +1,5 @@
 .projects {
-  background-color: color(background);
+  background-color: var(--background);
   height: auto;
   min-height: 100vh;
 
@@ -15,21 +15,22 @@
 
     > p {
       font-family: font(text);
-      @include font-size(h5);
+      @include font-size(small);
       font-style: italic;
       position: relative;
-      color: color(main);
+      color: var(--main);
       margin: 2.5rem 0;
       font-weight: 300;
+      text-transform: uppercase;
 
       &::after {
         content: "";
         position: absolute;
-        background-color: color(main);
+        background-color: var(--main);
         width: 70%;
         height: 0.05rem;
         left: 15%;
-        top: 2.3rem;
+        top: 1.7rem;
         transform-origin: left;
       }
     }
@@ -39,16 +40,18 @@
       width: 16.5%;
       text-align: center;
       line-height: 1.1;
+      color: var(--main);
     }
 
     &::after,
     &::before {
       content: "";
       position: absolute;
-      background-color: color(main-lighter);
+      background-color: var(--main);
       width: 0.01rem;
       height: 14rem;
       left: 50%;
+      opacity: 0.3;
     }
 
     &::before {
@@ -86,7 +89,7 @@
       &-cta {
         @include font-size(h5);
         font-weight: 300;
-        color: color(main);
+        color: var(--main);
         width: 10rem;
         text-align: center;
         font-family: font(text);

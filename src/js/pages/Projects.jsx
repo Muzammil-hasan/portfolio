@@ -54,7 +54,7 @@ const Projects = ({ mouseOverEvent, mouseOutEvent, content }) => {
           data-scroll-speed='1'
           data-scroll-position='top'
         >
-          <p>our work</p>
+          <p>my work</p>
           <h1 className='projects__content-title'>
             Explore some of my recent projects.
           </h1>

@@ -3,7 +3,7 @@
     font-family: font(text);
     @include font-size(h5);
     font-weight: 300;
-    color: color(main);
+    color: var(--main);
     opacity: 0.75;
     padding-bottom: 6rem;
   }
@@ -32,7 +32,7 @@
         text-transform: capitalize;
         @include font-size(p);
         font-family: font(text);
-        color: color(main);
+        color: var(--main);
 
         &.active {
           left: 0;
@@ -64,9 +64,9 @@
       padding: 0.8rem 0 0.5rem;
       width: 20rem;
       resize: none;
-      border-bottom: 1px solid color(main);
+      border-bottom: 1px solid var(--main);
       font-family: font(text);
-      color: color(main);
+      color: var(--main);
     }
 
     button {

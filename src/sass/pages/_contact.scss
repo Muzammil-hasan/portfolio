@@ -1,15 +1,16 @@
 .contact {
   @extend .flex-between;
-  background-color: color(background);
+  background-color: var(--background);
   height: 100vh;
   position: relative;
 
   &__divider {
     position: absolute;
-    background-color: color(main-lighter);
+    background-color: var(--main);
     height: 26rem;
     width: 0.01rem;
     top: 50%;
+    opacity: 0.3;
     left: 50%;
     transform: translate(-50%, -50%);
   }
@@ -20,7 +21,7 @@
         font-family: font(text);
         opacity: 0.75;
         @include font-size(h6);
-        color: color(main);
+        color: var(--main);
         padding-bottom: 0.5rem;
         font-weight: 300;
       }
@@ -42,7 +43,7 @@
       a,
       p {
         display: table;
-        color: color(main);
+        color: var(--main);
 
         &:not(:last-child) {
           padding-bottom: 0.5rem;

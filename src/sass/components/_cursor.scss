@@ -6,12 +6,12 @@
   transform: translate(-50%, -50%);
   border-radius: 50%;
   opacity: 1;
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
   z-index: 99;
   pointer-events: none;
   width: 1rem;
   height: 1rem;
-  background: color(main);
+  background: var(--main);
 
   @include device(mobile) {
     & {
