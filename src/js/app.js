@@ -20,6 +20,8 @@ import Cursor from "./components/Cursor";
 import Noise from "./components/Noise";
 
 function App() {
+  const [toggleTheme, setToggleTheme] = useState(true);
+
   const routes = [
     { name: "home", path: "/", Component: Home },
     { name: "about", path: "/about", Component: About },
@@ -118,7 +120,7 @@ function App() {
   };
 
   return (
-    <>
+    <main className={`main ${toggleTheme ? "theme-light" : "theme-dark"}`}>
       <Noise />
       <Cursor active={active} dot={dot} />
       <Header
@@ -146,7 +148,7 @@ function App() {
           </Switch>
         </ScrollToTop>
       </AnimatePresence>
-    </>
+    </main>
   );
 }
 
