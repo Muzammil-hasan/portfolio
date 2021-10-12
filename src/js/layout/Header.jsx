@@ -1,6 +1,8 @@
 import React from "react";
 import { NavLink as Link } from "react-router-dom";
 import Nav from "../components/Nav";
+import { RiSunFill } from "react-icons/ri";
+import ToggleTheme from "../components/ToggleTheme";
 
 const Header = ({ active, setActive, mouseOverEvent, mouseOutEvent }) => {
   return (

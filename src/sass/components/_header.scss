@@ -27,6 +27,18 @@
     }
   }
 
+  &__toggleTheme {
+    @extend .del-default;
+    position: fixed;
+    bottom: 2.5rem;
+    padding: 1rem 0;
+    left: $page-padding;
+    z-index: 8;
+    color: var(--main);
+    @include font-size(small);
+    text-transform: uppercase;
+  }
+
   &__hamburger__container {
     @extend .flex-center;
     position: fixed;

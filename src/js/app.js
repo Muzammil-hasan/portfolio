@@ -18,9 +18,30 @@ import ScrollToTop from "./components/ScrollToTop";
 import Header from "./layout/Header";
 import Cursor from "./components/Cursor";
 import Noise from "./components/Noise";
+import ToggleTheme from "./components/ToggleTheme";
 
 function App() {
-  const [toggleTheme, setToggleTheme] = useState(true);
+  const [toggleTheme, setToggleTheme] = useState("");
+
+  const lightTheme = "light";
+  const darkTheme = "dark";
+  let theme;
+
+  const switchTheme = (e) => {
+    if (theme === darkTheme) {
+      setToggleTheme(theme);
+      localStorage.setItem("theme", "light");
+      theme = lightTheme;
+    } else {
+      localStorage.setItem("theme", "dark");
+      setToggleTheme(theme);
+      theme = darkTheme;
+    }
+  };
+
+  if (localStorage) {
+    theme = localStorage.getItem("theme");
+  }
 
   const routes = [
     { name: "home", path: "/", Component: Home },
@@ -61,7 +82,7 @@ function App() {
 
   const toggleCursorSize = () => {
     if (cursorEnlarged.current) {
-      dot.current.style.transform = "translate(-50%, -50%) scale(3.5)";
+      dot.current.style.transform = "translate(-50%, -50%) scale(4)";
       dot.current.style.opacity = 0.2;
     } else {
       dot.current.style.transform = "translate(-50%, -50%) scale(1)";
@@ -120,9 +141,16 @@ function App() {
   };
 
   return (
-    <main className={`main ${toggleTheme ? "theme-light" : "theme-dark"}`}>
+    <main className={`main ${theme == "dark" ? "theme-dark" : "theme-light"}`}>
       <Noise />
       <Cursor active={active} dot={dot} />
+      <ToggleTheme
+        mouseOutEvent={mouseOutEvent}
+        mouseOverEvent={mouseOverEvent}
+        switchTheme={switchTheme}
+        theme={theme}
+      />
+
       <Header
         dot={dot}
         active={active}
