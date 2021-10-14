@@ -1,8 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { NavLink as Link } from "react-router-dom";
+import { useStore } from "../contexts/Store";
 
-const Nav = ({ active, setActive, mouseOverEvent, mouseOutEvent }) => {
+const Nav = ({ active, setActive }) => {
+  const { mouseOutEvent, mouseOverEvent } = useStore();
   const pages = ["home", "about", "projects", "contact"];
 
   return (

@@ -1,9 +1,12 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
+import { useStore } from "../contexts/Store";
 import locomotiveScroll from "locomotive-scroll";
 import Preloader from "../layout/Preloader";
 
-const Projects = ({ mouseOverEvent, mouseOutEvent, content }) => {
+const Projects = () => {
+  const { content, mouseOutEvent, mouseOverEvent } = useStore();
+
   const scrollRef = React.createRef();
   const projects = [
     {
@@ -100,6 +103,14 @@ const Projects = ({ mouseOverEvent, mouseOutEvent, content }) => {
                   onMouseOut={mouseOutEvent}
                 >
                   {name}
+                  <span>
+                    <svg viewBox='0 0 26 26' fill='none'>
+                      <path
+                        d='M1.99981 25.9394L24.0151 3.92409V19H25.9998V0.550049L6.99981 0.5V2.5L22.6258 2.53478L0.660738 24.5L1.99981 25.9394Z'
+                        fill='currentColor'
+                      />
+                    </svg>
+                  </span>
                 </a>
               </li>
             );

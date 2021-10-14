@@ -1,6 +1,8 @@
 import React from "react";
+import { useStore } from "../contexts/Store";
+const ToggleTheme = ({ switchTheme, theme }) => {
+  const { mouseOutEvent, mouseOverEvent } = useStore();
 
-const ToggleTheme = ({ mouseOutEvent, mouseOverEvent, switchTheme, theme }) => {
   return (
     <button
       className={`header__toggleTheme`}

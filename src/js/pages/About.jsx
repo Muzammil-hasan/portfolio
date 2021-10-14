@@ -1,8 +1,11 @@
 import React from "react";
 import Preloader from "../layout/Preloader";
 import { motion } from "framer-motion";
+import { useStore } from "../contexts/Store";
 
-const About = ({ mouseOverEvent, mouseOutEvent, content }) => {
+const About = () => {
+  const { content, mouseOutEvent, mouseOverEvent } = useStore();
+
   return (
     <>
       <Preloader />

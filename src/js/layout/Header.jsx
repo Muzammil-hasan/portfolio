@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink as Link } from "react-router-dom";
+import { useStore } from "../contexts/Store";
 import Nav from "../components/Nav";
-import { RiSunFill } from "react-icons/ri";
-import ToggleTheme from "../components/ToggleTheme";
 
-const Header = ({ active, setActive, mouseOverEvent, mouseOutEvent }) => {
+const Header = () => {
+  const { mouseOutEvent, mouseOverEvent } = useStore();
+  const [active, setActive] = useState(false);
+
   return (
     <>
       <header className='header'>
@@ -147,12 +149,7 @@ const Header = ({ active, setActive, mouseOverEvent, mouseOutEvent }) => {
           </button>
         </div>
 
-        <Nav
-          active={active}
-          setActive={setActive}
-          mouseOverEvent={mouseOverEvent}
-          mouseOutEvent={mouseOutEvent}
-        />
+        <Nav active={active} setActive={setActive} />
       </header>
     </>
   );

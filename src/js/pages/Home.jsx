@@ -1,8 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useStore } from "../contexts/Store";
 import Preloader from "../layout/Preloader";
 
-const Home = ({ content }) => {
+const Home = () => {
+  const { content } = useStore();
+
   return (
     <>
       <Preloader />

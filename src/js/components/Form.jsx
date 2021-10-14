@@ -1,8 +1,10 @@
-import React, { useState, useRef } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { Formik } from "formik";
+import { useStore } from "../contexts/Store";
 
-const Form = ({ mouseOverEvent, mouseOutEvent, content }) => {
+const Form = () => {
+  const { mouseOverEvent, mouseOutEvent, content } = useStore();
   const FORMSPARK_ACTION_URL = "https://submit-form.com/32rKDtQ8";
 
   return (

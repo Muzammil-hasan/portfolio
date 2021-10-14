@@ -2,8 +2,11 @@ import React from "react";
 import Preloader from "../layout/Preloader";
 import { motion } from "framer-motion";
 import Form from "../components/Form";
+import { useStore } from "../contexts/Store";
 
-const Contact = ({ mouseOverEvent, mouseOutEvent, content }) => {
+const Contact = () => {
+  const { content, mouseOutEvent, mouseOverEvent } = useStore();
+
   const personalDetails = [
     {
       id: 1,
