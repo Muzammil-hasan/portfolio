@@ -96,15 +96,14 @@
         margin: 2rem auto;
         @extend .cta-third;
 
-        &::before {
-          content: url(../../../dist/images/arrow.svg);
-          position: absolute;
-          right: 0.5rem;
-          top: -0.8rem;
-          width: 1rem;
-          opacity: 0.7;
-          color: red;
-          fill: red;
+        span {
+          svg {
+            position: absolute;
+            width: 0.5rem;
+            right: 1.7rem;
+            top: -0.2rem;
+            color: var(--main);
+          }
         }
 
         &::after {
@@ -115,15 +114,23 @@
         }
       }
 
-      &.blu-south {
-        a::before {
-          right: 1.1rem;
+      &.spring-field {
+        a {
+          span {
+            svg {
+              right: 0.8rem;
+            }
+          }
         }
       }
 
       &.holland-village {
-        a::before {
-          right: 0rem;
+        a {
+          span {
+            svg {
+              right: 0rem;
+            }
+          }
         }
       }
     }
@@ -182,21 +189,11 @@
               top: 3.3rem;
             }
 
-            &::before {
-              top: -1.3rem;
-              right: 0.9rem;
-            }
-          }
-
-          &.blu-south {
-            a::before {
-              right: 1.7rem;
-            }
-          }
-
-          &.holland-village {
-            a::before {
-              right: 0rem;
+            span {
+              svg {
+                right: 2.4rem;
+                width: 0.8rem;
+              }
             }
           }
         }
