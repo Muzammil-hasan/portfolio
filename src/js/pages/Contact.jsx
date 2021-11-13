@@ -36,7 +36,10 @@ const Contact = () => {
           linkName: "Linkedin",
           url: "https://www.linkedin.com/in/muzammil-hasan-5279b61b8",
         },
-
+        {
+          linkName: "Github",
+          url: "https://github.com/Muzammil-hasan",
+        },
         {
           linkName: "Whatsapp",
           url: "https://wa.me/+919717931398",
