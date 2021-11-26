@@ -27,26 +27,9 @@ function App() {
     { name: "contact", path: "/contact", Component: Contact },
   ];
 
-  // const content = {
-  //   initial: { opacity: 0 },
-  //   animate: {
-  //     opacity: 1,
-  //     transition: {
-  //       ease: "easeInOut",
-  //       duration: 0.7,
-  //       delay: 1.5,
-  //     },
-  //   },
-  //   exit: {
-  //     opacity: 0,
-  //     transition: {
-  //       ease: "easeInOut",
-  //       duration: 0.7,
-  //     },
-  //   },
-  // };
 
-  const [toggleTheme, setToggleTheme] = useState("");
+
+  const [toggleTheme, setToggleTheme] = useState(darkTheme);
 
   const lightTheme = "light";
   const darkTheme = "dark";
