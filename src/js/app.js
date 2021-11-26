@@ -52,7 +52,7 @@ function App() {
   }
 
   return (
-    <main className={`main ${theme == "dark" ? "theme-dark" : "theme-light"}`}>
+    <main className={`main ${theme == "light" ? "theme-light" : "theme-dark"}`}>
       <MouseContextProvider>
         <Noise />
         <Cursor />
