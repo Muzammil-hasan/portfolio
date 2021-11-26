@@ -29,10 +29,10 @@ function App() {
 
 
 
-  const [toggleTheme, setToggleTheme] = useState(darkTheme);
+  const [toggleTheme, setToggleTheme] = useState("");
 
-  const lightTheme = "light";
   const darkTheme = "dark";
+  const lightTheme = "light";
   let theme;
 
   const switchTheme = (e) => {
