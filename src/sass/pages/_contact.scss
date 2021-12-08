@@ -1,107 +1,108 @@
 .contact {
-  @extend .flex-between;
-  background-color: var(--background);
-  height: 100vh;
-  position: relative;
+	@extend .flex-between;
+	background-color: var(--accent);
+	height: auto;
+	position: relative;
+	padding: 4rem 0;
 
-  &__divider {
-    position: absolute;
-    background-color: #8b8b8b;
-    height: 26rem;
-    width: 1px;
-    top: 50%;
-    opacity: 0.3;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+	&__divider {
+		position: absolute;
+		background-color: #8b8b8b;
+		height: 26rem;
+		width: 1px;
+		top: 50%;
+		opacity: 0.3;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
 
-  &__personal {
-    &-container {
-      &-title {
-        font-family: font(text);
-        opacity: 0.75;
-        @include font-size(h6);
-        color: var(--main);
-        padding-bottom: 0.5rem;
-        font-weight: 300;
-      }
+	&__personal {
+		&-container {
+			&-title {
+				font-family: font(text);
+				opacity: 0.75;
+				@include font-size(h6);
+				color: var(--main);
+				padding-bottom: 0.5rem;
+				font-weight: 300;
+			}
 
-      a {
-        @extend .cta-secondary;
+			a {
+				@extend .cta-secondary;
 
-        &::after {
-          width: 100%;
-          left: 0;
-          top: 1.5rem;
-        }
-      }
+				&::after {
+					width: 100%;
+					left: 0;
+					top: 1.5rem;
+				}
+			}
 
-      p {
-        width: 75%;
-      }
+			p {
+				width: 75%;
+			}
 
-      a,
-      p {
-        display: table;
-        color: var(--main);
+			a,
+			p {
+				display: table;
+				color: var(--main);
 
-        &:not(:last-child) {
-          padding-bottom: 0.5rem;
-        }
-      }
+				&:not(:last-child) {
+					padding-bottom: 0.5rem;
+				}
+			}
 
-      &:not(:last-child) {
-        margin-bottom: 4rem;
-      }
-    }
-  }
+			&:not(:last-child) {
+				margin-bottom: 2rem;
+			}
+		}
+	}
 
-  &__form,
-  &__personal {
-    width: 50%;
-    height: 100%;
-    @extend .flex-center;
-    flex-direction: column;
-  }
+	&__form,
+	&__personal {
+		width: 50%;
+		height: 100%;
+		@extend .flex-center;
+		flex-direction: column;
+	}
 
-  @include device(mobileAndTablet) {
-    & {
-      padding: 20vh $mobile-page-padding 5rem;
-      height: auto;
-      flex-direction: column;
-      flex-wrap: nowrap;
+	@include device(mobileAndTablet) {
+		& {
+			padding: 20vh $mobile-page-padding 5rem;
+			height: auto;
+			flex-direction: column;
+			flex-wrap: nowrap;
 
-      &__form,
-      &__personal {
-        width: 100%;
-        align-items: flex-start;
-        padding: 5rem 0;
-      }
+			&__form,
+			&__personal {
+				width: 100%;
+				align-items: flex-start;
+				padding: 5rem 0;
+			}
 
-      &__personal {
-        &-container {
-          &-title {
-            @include font-size(h4);
-          }
+			&__personal {
+				&-container {
+					&-title {
+						@include font-size(h4);
+					}
 
-          a,
-          p {
-            @include font-size(h4);
+					a,
+					p {
+						@include font-size(h4);
 
-            &::after {
-              top: 2.3rem;
-            }
+						&::after {
+							top: 2.3rem;
+						}
 
-            &:not(:last-child) {
-              padding-bottom: 1.2rem;
-            }
-          }
-        }
-      }
+						&:not(:last-child) {
+							padding-bottom: 1.2rem;
+						}
+					}
+				}
+			}
 
-      &__divider {
-        display: none;
-      }
-    }
-  }
+			&__divider {
+				display: none;
+			}
+		}
+	}
 }

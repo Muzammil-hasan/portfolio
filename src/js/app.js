@@ -1,87 +1,64 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import { Switch, Route, HashRouter as Router } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
 
-/* Pages */
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Projects from "./pages/Projects";
+/* Sections */
+import Hero from "./sections/Hero";
+import About from "./sections/About";
+import Projects from "./sections/Projects";
+import Contact from "./sections/Contact";
 
 /* Components */
-import ScrollToTop from "./components/ScrollToTop";
-import Header from "./layout/Header";
 import Cursor from "./components/Cursor";
 import Noise from "./components/Noise";
 import ToggleTheme from "./components/ToggleTheme";
+import Preloader from "./layout/Preloader.jsx";
 
 /* Context */
 import MouseContextProvider from "./contexts/Store";
+import Header from "./layout/Header";
+import Footer from "./layout/Footer";
 
 function App() {
-  const routes = [
-    { name: "home", path: "/", Component: Home },
-    { name: "about", path: "/about", Component: About },
-    { name: "projects", path: "/projects", Component: Projects },
-    { name: "contact", path: "/contact", Component: Contact },
-  ];
+	const [toggleTheme, setToggleTheme] = useState("");
 
+	const darkTheme = "dark";
+	const lightTheme = "light";
+	let theme;
 
+	const switchTheme = (e) => {
+		if (theme === darkTheme) {
+			setToggleTheme(theme);
+			localStorage.setItem("theme", "light");
+			theme = lightTheme;
+		} else {
+			localStorage.setItem("theme", "dark");
+			setToggleTheme(theme);
+			theme = darkTheme;
+		}
+	};
 
-  const [toggleTheme, setToggleTheme] = useState("");
+	if (localStorage) {
+		theme = localStorage.getItem("theme");
+	}
 
-  const darkTheme = "dark";
-  const lightTheme = "light";
-  let theme;
-
-  const switchTheme = (e) => {
-    if (theme === darkTheme) {
-      setToggleTheme(theme);
-      localStorage.setItem("theme", "light");
-      theme = lightTheme;
-    } else {
-      localStorage.setItem("theme", "dark");
-      setToggleTheme(theme);
-      theme = darkTheme;
-    }
-  };
-
-  if (localStorage) {
-    theme = localStorage.getItem("theme");
-  }
-
-  return (
-    <main className={`main ${theme == "light" ? "theme-light" : "theme-dark"}`}>
-      <MouseContextProvider>
-        <Noise />
-        <Cursor />
-        <Header />
-        <ToggleTheme switchTheme={switchTheme} theme={theme} />
-
-        <AnimatePresence initial='false' exitBeforeEnter>
-          <ScrollToTop>
-            <Switch>
-              {routes.map(({ path, Component, name }) => {
-                return (
-                  <Route key={name} path={path} exact>
-                    <Component />
-                  </Route>
-                );
-              })}
-            </Switch>
-          </ScrollToTop>
-        </AnimatePresence>
-      </MouseContextProvider>
-    </main>
-  );
+	return (
+		<main className={`main ${theme == "light" ? "theme-light" : "theme-dark"}`}>
+			<MouseContextProvider>
+				<Preloader />
+				<Noise />
+				<Header />
+				<Cursor />
+				<Hero />
+				<About />
+				<Projects />
+				<Contact />
+				<Footer />
+				<ToggleTheme switchTheme={switchTheme} theme={theme} />
+			</MouseContextProvider>
+		</main>
+	);
 }
 
-ReactDOM.render(
-  <Router>
-    <App />
-  </Router>,
-  document.getElementById("root")
-);
+ReactDOM.render(<App />, document.getElementById("root"));
 
 export default App;

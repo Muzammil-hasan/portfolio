@@ -1,203 +1,204 @@
 .projects {
-  background-color: var(--background);
-  height: auto;
-  min-height: 100vh;
+	background-color: var(--background);
+	height: auto;
+	min-height: 100vh;
+	position: relative;
 
-  &__content {
-    @extend .flex-center;
-    flex-direction: column;
-    position: absolute;
-    height: 100vh;
-    left: 0;
-    top: 7rem;
-    right: 0;
-    bottom: 0;
+	&__content {
+		@extend .flex-center;
+		flex-direction: column;
+		position: absolute;
+		height: 100vh;
+		left: 0;
+		top: 7rem;
+		right: 0;
+		bottom: 0;
 
-    > p {
-      font-family: font(text);
-      @include font-size(small);
-      font-style: italic;
-      position: relative;
-      color: var(--main);
-      margin: 2.5rem 0;
-      font-weight: 300;
-      text-transform: uppercase;
+		> p {
+			font-family: font(text);
+			@include font-size(small);
+			font-style: italic;
+			position: relative;
+			color: var(--main);
+			margin: 2.5rem 0;
+			font-weight: 300;
+			text-transform: uppercase;
 
-      &::after {
-        content: "";
-        position: absolute;
-        background-color: var(--main);
-        width: 70%;
-        height: 0.05rem;
-        left: 15%;
-        top: 1.7rem;
-        transform-origin: left;
-      }
-    }
+			&::after {
+				content: "";
+				position: absolute;
+				background-color: var(--main);
+				width: 70%;
+				height: 0.05rem;
+				left: 15%;
+				top: 1.7rem;
+				transform-origin: left;
+			}
+		}
 
-    &-title {
-      font-size: 2rem;
-      width: 16.5%;
-      text-align: center;
-      line-height: 1.1;
-      color: var(--main);
-    }
+		&-title {
+			font-size: 2rem;
+			width: 16.5%;
+			text-align: center;
+			line-height: 1.1;
+			color: var(--main);
+		}
 
-    &::after,
-    &::before {
-      content: "";
-      position: absolute;
-      background-color: var(--main);
-      width: 0.05rem;
-      height: 14rem;
-      left: 50%;
-      opacity: 0.3;
-    }
+		&::after,
+		&::before {
+			content: "";
+			position: absolute;
+			background-color: var(--main);
+			width: 0.05rem;
+			height: 14rem;
+			left: 50%;
+			opacity: 0.3;
+		}
 
-    &::before {
-      top: 6rem;
-    }
+		&::before {
+			top: 6rem;
+		}
 
-    &::after {
-      bottom: -12rem;
-      height: 28rem;
-    }
-  }
+		&::after {
+			bottom: -12rem;
+			height: 28rem;
+		}
+	}
 
-  &__container {
-    @extend .inline-list;
-    @extend .flex-between;
-    padding: 11% 0 0;
+	&__container {
+		@extend .inline-list;
+		@extend .flex-between;
+		padding: 11% 0;
 
-    &__item {
-      @extend .flex-center;
-      flex-direction: column;
-      width: 50%;
-      margin-bottom: 13vh;
+		&__item {
+			@extend .flex-center;
+			flex-direction: column;
+			width: 50%;
+			margin-bottom: 13vh;
 
-      &:nth-last-child(1),
-      &:nth-last-child(2) {
-        margin-bottom: 0;
-      }
+			&:nth-last-child(1),
+			&:nth-last-child(2) {
+				margin-bottom: 0;
+			}
 
-      &-image {
-        @extend .img-background;
-        width: 20rem;
-        height: 31.25rem;
-      }
+			&-image {
+				@extend .img-background;
+				width: 20rem;
+				height: 31.25rem;
+			}
 
-      &-cta {
-        @include font-size(h5);
-        font-weight: 300;
-        color: var(--main);
-        width: 10rem;
-        text-align: center;
-        font-family: font(text);
-        margin: 2rem auto;
-        @extend .cta-third;
+			&-cta {
+				@include font-size(h5);
+				font-weight: 300;
+				color: var(--main);
+				width: 10rem;
+				text-align: center;
+				font-family: font(text);
+				margin: 2rem auto;
+				@extend .cta-third;
 
-        span {
-          svg {
-            position: absolute;
-            width: 0.5rem;
-            right: 1.7rem;
-            top: -0.2rem;
-            color: var(--main);
-          }
-        }
+				span {
+					svg {
+						position: absolute;
+						width: 0.5rem;
+						right: 1.7rem;
+						top: -0.2rem;
+						color: var(--main);
+					}
+				}
 
-        &::after {
-          width: 34%;
-          left: 33%;
-          top: 2.3rem;
-          transform-origin: left;
-        }
-      }
+				&::after {
+					width: 34%;
+					left: 33%;
+					top: 2.3rem;
+					transform-origin: left;
+				}
+			}
 
-      &.spring-field {
-        a {
-          span {
-            svg {
-              right: 0.8rem;
-            }
-          }
-        }
-      }
+			&.spring-field {
+				a {
+					span {
+						svg {
+							right: 0.8rem;
+						}
+					}
+				}
+			}
 
-      &.holland-village {
-        a {
-          span {
-            svg {
-              right: 0rem;
-            }
-          }
-        }
-      }
-    }
-  }
+			&.holland-village {
+				a {
+					span {
+						svg {
+							right: 0rem;
+						}
+					}
+				}
+			}
+		}
+	}
 
-  @include device(mobileAndTablet) {
-    & {
-      &__content {
-        height: auto;
-        position: relative;
-        padding: 28vh 0 13vh;
+	@include device(mobileAndTablet) {
+		& {
+			&__content {
+				height: auto;
+				position: relative;
+				padding: 28vh 0 13vh;
 
-        > p {
-          @include font-size(h3);
+				> p {
+					@include font-size(h3);
 
-          &::after {
-            top: 3.3rem;
-          }
-        }
+					&::after {
+						top: 3.3rem;
+					}
+				}
 
-        &-title {
-          font-size: 2.9rem;
-          width: 62.5%;
-        }
+				&-title {
+					font-size: 2.9rem;
+					width: 62.5%;
+				}
 
-        &::after {
-          display: none;
-        }
-      }
+				&::after {
+					display: none;
+				}
+			}
 
-      &__container {
-        flex-direction: column;
-        padding: 13vh 0 0;
+			&__container {
+				flex-direction: column;
+				padding: 13vh 0 0;
 
-        &__item {
-          width: 100%;
-          margin-bottom: 13vh;
+				&__item {
+					width: 100%;
+					margin-bottom: 13vh;
 
-          &:nth-last-child(1),
-          &:nth-last-child(2) {
-            margin: auto;
-            margin-bottom: 13vh;
-          }
+					&:nth-last-child(1),
+					&:nth-last-child(2) {
+						margin: auto;
+						margin-bottom: 13vh;
+					}
 
-          &-image {
-            width: 30rem;
-            height: 40.25rem;
-          }
+					&-image {
+						width: 30rem;
+						height: 40.25rem;
+					}
 
-          &-cta {
-            @include font-size(h3);
-            width: 15rem;
-            margin: 4rem 0;
+					&-cta {
+						@include font-size(h3);
+						width: 15rem;
+						margin: 4rem 0;
 
-            &::after {
-              top: 3.3rem;
-            }
+						&::after {
+							top: 3.3rem;
+						}
 
-            span {
-              svg {
-                right: 2.4rem;
-                width: 0.8rem;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+						span {
+							svg {
+								right: 2.4rem;
+								width: 0.8rem;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }

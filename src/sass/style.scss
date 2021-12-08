@@ -31,13 +31,18 @@
 @import "./partials/buttons";
 
 /*--------------------------------------------------------------
+# Layouts
+--------------------------------------------------------------*/
+@import "./layout/header";
+@import "./layout/preloader";
+@import "./layout/footer";
+@import "layout/noise";
+
+/*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
-@import "./components/header";
 @import "./components/cursor";
-@import "./components/preloader";
 @import "components/nav";
-@import "components/noise";
 @import "components/form";
 
 /*--------------------------------------------------------------

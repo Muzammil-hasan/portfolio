@@ -1,136 +1,136 @@
 .contact__form {
-  &-title {
-    font-family: font(text);
-    @include font-size(h5);
-    font-weight: 300;
-    color: var(--main);
-    opacity: 0.75;
-    padding-bottom: 6rem;
-  }
+	&-title {
+		font-family: font(text);
+		@include font-size(h5);
+		font-weight: 300;
+		color: var(--main);
+		opacity: 0.75;
+		padding-bottom: 3rem;
+	}
 
-  form {
-    > .inputWrapper {
-      @extend .flex-start;
-      align-items: flex-start;
-      flex-direction: column;
-      position: relative;
-      width: 20rem;
+	form {
+		> .inputWrapper {
+			@extend .flex-start;
+			align-items: flex-start;
+			flex-direction: column;
+			position: relative;
+			width: 20rem;
 
-      &:not(:last-child) {
-        margin-bottom: 3.4rem;
-      }
+			&:not(:last-child) {
+				margin-bottom: 3.4rem;
+			}
 
-      &.submitWrapper {
-        align-items: flex-end;
-      }
+			&.submitWrapper {
+				align-items: flex-end;
+			}
 
-      label {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-45%);
-        transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
-        text-transform: capitalize;
-        @include font-size(p);
-        font-family: font(text);
-        color: var(--main);
+			label {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-45%);
+				transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+				text-transform: capitalize;
+				@include font-size(p);
+				font-family: font(text);
+				color: var(--main);
 
-        &.active {
-          left: 0;
-          opacity: 0.6;
-          transform: translate(-0.4rem, -160%) scale(0.9);
-        }
-      }
+				&.active {
+					left: 0;
+					opacity: 0.6;
+					transform: translate(-0.4rem, -160%) scale(0.9);
+				}
+			}
 
-      &:focus-within {
-        label {
-          left: 0;
-          opacity: 0.6;
-          transform: translate(-0.3rem, -160%) scale(0.9);
-        }
-      }
-    }
+			&:focus-within {
+				label {
+					left: 0;
+					opacity: 0.6;
+					transform: translate(-0.3rem, -160%) scale(0.9);
+				}
+			}
+		}
 
-    textarea {
-      overflow: scroll;
-    }
+		textarea {
+			overflow: scroll;
+		}
 
-    input,
-    textarea,
-    button {
-      @include font-size(h5);
-      background: none;
-      outline: none;
-      border: none;
-      padding: 0.8rem 0 0.5rem;
-      width: 20rem;
-      resize: none;
-      border-bottom: 1px solid var(--main);
-      font-family: font(text);
-      color: var(--main);
-    }
+		input,
+		textarea,
+		button {
+			@include font-size(h5);
+			background: none;
+			outline: none;
+			border: none;
+			padding: 0.8rem 0 0.5rem;
+			width: 20rem;
+			resize: none;
+			border-bottom: 1px solid var(--main);
+			font-family: font(text);
+			color: var(--main);
+		}
 
-    button {
-      @include font-size(p);
-      @extend .cta-third;
-      opacity: 0.7;
-      text-align: center;
-      width: 7rem;
-      transition: opacity 0.2s ease-in-out;
-      cursor: none;
-      border: none;
+		button {
+			@include font-size(p);
+			@extend .cta-third;
+			opacity: 0.7;
+			text-align: center;
+			width: 7rem;
+			transition: opacity 0.2s ease-in-out;
+			cursor: none;
+			border: none;
 
-      &:hover {
-        opacity: 1;
-      }
-    }
-  }
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
 
-  &-errors {
-    @include font-size(x-small);
-    bottom: -1.8rem;
-    position: absolute;
-    color: #e55e5e;
-    font-family: font(secondary);
-    letter-spacing: 1px;
-    text-transform: lowercase;
-  }
+	&-errors {
+		@include font-size(x-small);
+		bottom: -1.8rem;
+		position: absolute;
+		color: #e55e5e;
+		font-family: font(secondary);
+		letter-spacing: 1px;
+		text-transform: lowercase;
+	}
 
-  @include device(mobileAndTablet) {
-    & {
-      &-title {
-        @include font-size(h3);
-      }
+	@include device(mobileAndTablet) {
+		& {
+			&-title {
+				@include font-size(h3);
+			}
 
-      form {
-        > .inputWrapper {
-          @extend .flex-start;
-          align-items: flex-start;
-          flex-direction: column;
-          position: relative;
-          width: (100vw - $mobile-page-padding * 3);
+			form {
+				> .inputWrapper {
+					@extend .flex-start;
+					align-items: flex-start;
+					flex-direction: column;
+					position: relative;
+					width: (100vw - $mobile-page-padding * 3);
 
-          &:not(:last-child) {
-            margin-bottom: 5rem;
-          }
+					&:not(:last-child) {
+						margin-bottom: 5rem;
+					}
 
-          label {
-            @include font-size(h4);
-          }
-        }
+					label {
+						@include font-size(h4);
+					}
+				}
 
-        input,
-        textarea,
-        button {
-          @include font-size(h3);
-          padding: 1rem 0;
-          width: 100%;
-        }
+				input,
+				textarea,
+				button {
+					@include font-size(h3);
+					padding: 1rem 0;
+					width: 100%;
+				}
 
-        button {
-          @include font-size(h4);
-          width: 10rem;
-        }
-      }
-    }
-  }
+				button {
+					@include font-size(h4);
+					width: 10rem;
+				}
+			}
+		}
+	}
 }
