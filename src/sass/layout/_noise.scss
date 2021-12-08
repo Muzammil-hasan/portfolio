@@ -1,0 +1,15 @@
+.noise {
+  &::after {
+    content: "";
+    position: fixed;
+    top: -100vh;
+    left: -100vw;
+    width: 200vw;
+    height: 200vh;
+    content: "";
+    opacity: 0.02;
+    z-index: 1000;
+    pointer-events: none;
+    background-image: url("../../../dist/images/noise.gif");
+  }
+}
