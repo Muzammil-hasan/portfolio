@@ -38,7 +38,6 @@
     "react-intersection-observer": "^8.32.0",
     "react-lazy-load-image-component": "^1.5.1",
     "react-locomotive-scroll": "^0.2.0",
-    "react-router-dom": "^5.2.0",
     "react-use": "^17.2.4",
     "xstate": "^4.16.0",
     "yup": "^0.32.9"
