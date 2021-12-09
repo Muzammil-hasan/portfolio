@@ -1,21 +1,22 @@
 .cursor-dot {
-  pointer-events: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  opacity: 1;
-  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
-  z-index: 99;
-  pointer-events: none;
-  width: 1rem;
-  height: 1rem;
-  background: var(--main);
+	pointer-events: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	opacity: 1;
+	transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+	z-index: 99;
+	pointer-events: none;
+	width: 1rem;
+	height: 1rem;
+	background: var(--main);
+	mix-blend-mode: difference;
 
-  @include device(mobile) {
-    & {
-      display: none;
-    }
-  }
+	@include device(mobile) {
+		& {
+			display: none;
+		}
+	}
 }

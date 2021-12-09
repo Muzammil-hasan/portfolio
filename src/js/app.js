@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
+import { useStore } from "./contexts/Store";
 
 /* Sections */
 import Hero from "./sections/Hero";
@@ -42,20 +43,19 @@ function App() {
 	}
 
 	return (
-		<main className={`main ${theme == "light" ? "theme-light" : "theme-dark"}`}>
-			<MouseContextProvider>
+		<MouseContextProvider>
+			<main className={`main ${theme == "light" ? "theme-light" : "theme-dark"}`}>
 				<Preloader />
 				<Noise />
-				<Header />
+				<Header switchTheme={switchTheme} theme={theme} />
 				<Cursor />
 				<Hero />
 				<About />
 				<Projects />
 				<Contact />
 				<Footer />
-				<ToggleTheme switchTheme={switchTheme} theme={theme} />
-			</MouseContextProvider>
-		</main>
+			</main>
+		</MouseContextProvider>
 	);
 }
 

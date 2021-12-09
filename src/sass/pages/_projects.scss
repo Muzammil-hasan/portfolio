@@ -94,7 +94,8 @@
 				width: 10rem;
 				text-align: center;
 				font-family: font(text);
-				margin: 2rem auto;
+				margin: 1rem auto;
+				padding: 1rem 0;
 				@extend .cta-third;
 
 				span {
@@ -110,7 +111,7 @@
 				&::after {
 					width: 34%;
 					left: 33%;
-					top: 2.3rem;
+					top: 3rem;
 					transform-origin: left;
 				}
 			}
@@ -187,7 +188,7 @@
 						margin: 4rem 0;
 
 						&::after {
-							top: 3.3rem;
+							top: 4rem;
 						}
 
 						span {
