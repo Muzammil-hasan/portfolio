@@ -1,0 +1,146 @@
+html {
+	font-size: 16px;
+
+	::-webkit-scrollbar {
+		display: none;
+	}
+
+	/* Hide scrollbar for IE, Edge add Firefox */
+
+	-ms-overflow-style: none;
+	scrollbar-width: none; /* Firefox */
+}
+
+// Mobile phones
+@media (max-width: 767px) {
+	html {
+		font-size: 3.2vw;
+	}
+}
+
+// Tablets
+@media (min-width: 768px) and (max-width: 1024px) {
+	html {
+		font-size: 1.9vw;
+	}
+}
+
+// Desktop
+@media (min-width: 1025px) {
+	html {
+		font-size: 0.9375vw;
+	}
+}
+
+body {
+	font-family: font(heading);
+	font-weight: 400;
+	font-size: 1rem;
+	line-height: 1.6;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-feature-settings: "liga" 0;
+	font-feature-settings: "liga" 0;
+	-webkit-font-variant-ligatures: no-common-ligatures;
+	font-variant-ligatures: no-common-ligatures;
+}
+
+@font-face {
+	font-family: "Voyage";
+	font-weight: 200;
+	src: url(../../../public/fonts/made_bon_voyage_thin_personal_use-webfont.woff);
+	display: swap;
+}
+
+@font-face {
+	font-family: "Voyage";
+	font-weight: 400;
+	src: url(../../../public/fonts/made_bon_voyage_regular_personal_use-webfont.woff);
+	display: swap;
+}
+
+// Headings
+h1,
+.h1 {
+	font-family: font(heading);
+	font-weight: var(--font-primary-weight);
+	font-size: 3.052rem;
+}
+
+h2,
+.h2 {
+	font-family: font(heading);
+	font-weight: var(--font-primary-weight);
+	font-size: 2.441rem;
+}
+
+h3,
+.h3 {
+	font-family: font(heading);
+	font-weight: var(--font-heading-weight);
+	font-size: 1.953rem;
+}
+
+h4,
+.h4 {
+	font-family: var(--font-subheading);
+	font-weight: var(--font-subheading-weight);
+	font-size: 1.563rem;
+}
+
+h5,
+.h5 {
+	font-family: var(--font-subheading);
+	font-weight: var(--font-subheading-weight);
+	font-size: 1.25rem;
+}
+
+h6,
+.h6 {
+	font-family: var(--font-subheading);
+	font-weight: var(--font-subheading-weight);
+	font-size: 1rem;
+}
+
+small,
+.small {
+	font-size: 0.8rem;
+}
+
+.very-small {
+	font-size: 0.64rem;
+}
+
+.ultra-small {
+	font-size: 0.512rem;
+}
+
+// alignments
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-left {
+	text-align: left;
+}
+
+// Modifiers
+.text-bold {
+	font-weight: 700;
+}
+
+.text-semibold {
+	font-weight: 600;
+}
+
+.text-uppercase {
+	text-transform: uppercase;
+}
+
+.no-line-height {
+	line-height: 1em !important;
+}

@@ -1,0 +1,58 @@
+/*--------------------------------------------------------------
+# Import Google Fonts
+--------------------------------------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400&display=swap");
+
+/*--------------------------------------------------------------
+# Import Modules
+--------------------------------------------------------------*/
+@import "./normalize/normalize";
+@import "./locomotive/locomotive";
+
+/*--------------------------------------------------------------
+# Helpers
+--------------------------------------------------------------*/
+@import "./helpers/functions";
+@import "./helpers/variables";
+@import "./helpers/helpers";
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+@import "./base/global";
+@import "./base/animations";
+@import "./base/mixins";
+
+/*--------------------------------------------------------------
+# Partials
+--------------------------------------------------------------*/
+@import "./partials/typography";
+@import "./partials/buttons";
+
+/*--------------------------------------------------------------
+# Layouts
+--------------------------------------------------------------*/
+@import "./layout/header";
+@import "./layout/preloader";
+@import "./layout/footer";
+@import "layout/noise";
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+@import "./components/cursor";
+@import "components/nav";
+@import "components/form";
+
+/*--------------------------------------------------------------
+# sections
+--------------------------------------------------------------*/
+@import "./sections/hero";
+
+/*--------------------------------------------------------------
+# Pages
+--------------------------------------------------------------*/
+@import "./pages/about";
+@import "./pages/projects";
+@import "./pages/contact";
