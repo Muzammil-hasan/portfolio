@@ -86,6 +86,7 @@ const Projects = () => {
 									className="projects__container__item-cta"
 									href={siteLink}
 									target="_blank"
+									rel="noreferrer"
 									onMouseOver={mouseOverEvent}
 									onMouseOut={mouseOutEvent}
 								>
