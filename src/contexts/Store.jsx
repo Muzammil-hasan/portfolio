@@ -26,7 +26,7 @@ function StoreProvider({ children }) {
       document.removeEventListener("mouseenter", mouseEnterEvent);
       document.removeEventListener("mouseleave", mouseLeaveEvent);
     };
-  }, []);
+  });
 
   const toggleCursorVisibility = () => {
     if (cursorVisible.current) {

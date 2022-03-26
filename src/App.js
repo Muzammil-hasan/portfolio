@@ -17,7 +17,7 @@ import Header from "./layout/Header";
 import Footer from "./layout/Footer";
 
 function App() {
-  const [toggleTheme, setToggleTheme] = useState("");
+  const [toggleTheme, setToggleTheme] = useState("dark");
 
   const darkTheme = "dark";
   const lightTheme = "light";
@@ -42,7 +42,9 @@ function App() {
   return (
     <MouseContextProvider>
       <main
-        className={`main ${theme === "light" ? "theme-light" : "theme-dark"}`}
+        className={`main ${
+          toggleTheme === "light" ? "theme-light" : "theme-dark"
+        }`}
       >
         <Preloader />
         <Noise />
